@@ -8,11 +8,11 @@ class Caracteristicas{
     origemPolitica;
     origemSocioeconomica;
     nivelEscolaridade;    
-}
+};
 
 class Propostas{
 
-}
+};
 
 class EstadosEleitores{ 
     public:
@@ -22,7 +22,11 @@ class EstadosEleitores{
     double PIBperCapta;
     double escolaridade;
     double expectVida;
-    double ConcPol;
-    
+    double concPol;
+    char partidoMaisInf[];
+    char setorMaisImport[];
+    double criminalidade;
+    double taxaHomi;
+
 
 };
