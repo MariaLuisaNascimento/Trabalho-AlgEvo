@@ -1,3 +1,7 @@
+#include <iostream>
+using namespace std;
+
+
 class Candidato{ 
     public caracteristicas = new Caracteristicas();
     public propostas = new Propostas();
