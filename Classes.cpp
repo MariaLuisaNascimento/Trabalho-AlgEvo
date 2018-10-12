@@ -22,6 +22,7 @@ class EstadosEleitores{
     double PIBperCapta;
     double escolaridade;
     double expectVida;
+    double ConcPol;
     
 
 };
