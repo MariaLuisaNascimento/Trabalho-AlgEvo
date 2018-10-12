@@ -21,8 +21,16 @@ class Propostas{
 class EstadosEleitores{ 
     public:
     double popVotante;
-    double IDH;
-    char ReligPred[];
+    char religPred[];
+    //Determinantes IDH
+    double PIBperCapta;
+    double escolaridade;
+    double expectVida;
+    double concPol;
+    char partidoMaisInf[];
+    char setorMaisImport[];
+    double criminalidade;
+    double taxaHomi;
 
 
 };
