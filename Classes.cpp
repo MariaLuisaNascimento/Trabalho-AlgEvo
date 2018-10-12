@@ -8,25 +8,17 @@ class Caracteristicas{
     origemPolitica;
     origemSocioeconomica;
     nivelEscolaridade;    
-};
+}
 
 class Propostas{
-
-};
+    mudança;
+}
 
 class EstadosEleitores{ 
     public:
     double popVotante;
-    char religPred[];
-    //Determinantes IDH
-    double PIBperCapta;
-    double escolaridade;
-    double expectVida;
-    double concPol;
-    char partidoMaisInf[];
-    char setorMaisImport[];
-    double criminalidade;
-    double taxaHomi;
+    double IDH;
+    char ReligPred[];
 
 
 };
