@@ -1,7 +1,18 @@
 class Candidato{ 
-    public:
-
+    public caracteristicas = new Caracteristicas();
+    public propostas = new Propostas();
 };
+
+class Caracteristicas{
+    etnia;
+    origemPolitica;
+    origemSocioeconomica;
+    nivelEscolaridade;    
+}
+
+class Propostas{
+
+}
 
 class EstadosEleitores{ 
     public:
