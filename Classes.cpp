@@ -6,8 +6,11 @@ class Candidato{
 class EstadosEleitores{ 
     public:
     double popVotante;
-    double IDH;
-    char ReligPred[];
-
+    char religPred[];
+    //Determinantes IDH
+    double PIBperCapta;
+    double escolaridade;
+    double expectVida;
+    
 
 };
