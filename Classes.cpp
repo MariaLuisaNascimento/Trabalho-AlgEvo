@@ -12,25 +12,31 @@ class Caracteristicas{
     origemPolitica;
     origemSocioeconomica;
     nivelEscolaridade;    
-}
+};
 
 class Propostas{
-    
-}
+    mudança;
+};
 
 class EstadosEleitores{ 
     public:
+    double cAlta;
+    double cMediaAlta;
+    double cMediaBaixa;
+    double cBaixa;
     double popVotante;
-    char religPred[];
+    double religiosidade;
     //Determinantes IDH
     double PIBperCapta;
     double escolaridade;
     double expectVida;
-    double concPol;
-    char partidoMaisInf[];
-    char setorMaisImport[];
+    //acho que pode ser um vetor com porcentagem de direita esquerda e talz
+    double partidoMaisInf[3];
+    //vamos fazer 1- primário, 2- sec e 3 - ter
+    int setorMaisImport;
     double criminalidade;
     double taxaHomi;
+    double taxaFEtária;
 
 
 };
