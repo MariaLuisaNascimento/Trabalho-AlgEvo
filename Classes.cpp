@@ -143,6 +143,90 @@ int main(){
     else 
         printf("O candidato tem um viés social de esquerda\n");
 
-    //VOU COMEÇAR A SETAR OS ESTADOS, SE VC FOR MEXER, ME MANDA MENSAGEM PLEASE
+
+
+    // Setar os estados, acredito que quando formos setar os dados é bom que pegar os dados de um mesmo site
+    
+    //---- 1 Distrito Federal ----
+    EstadosEleitores* DistritoFederal = new EstadosEleitores;
+
+    //---- 2 Sao Paulo ----
+    EstadosEleitores* SaoPaulo = new EstadosEleitores;
+
+    //---- 3 Rio de Janeiro ----
+    EstadosEleitores* RioDeJaneiro = new EstadosEleitores;
+
+    //---- 4 Santa Catarina -----
+    EstadosEleitores* SantaCatarina = new EstadosEleitores;
+
+    // ---- 5 Rio Grande do Sul ----
+    EstadosEleitores* RioGrandeDoSul = new EstadosEleitores;
+
+    // ---- 6 Parana ----
+    EstadosEleitores* Parana = new EstadosEleitores;
+
+    // ---- 7 Mato Grosso ----
+    EstadosEleitores* MatoGrosso = new EstadosEleitores;
+
+    // ---- 8 Mato Grosso do Sul ----
+    EstadosEleitores* MatoGrossoDoSul = new EstadosEleitores;
+
+    // ---- 9 Espirito Santo ----
+    EstadosEleitores* EspiritoSanto = new EstadosEleitores;
+
+    // ---- 10 Goias ----
+    EstadosEleitores* Goias = new EstadosEleitores;
+
+    // ---- 11 Minas Gerais ----
+    EstadosEleitores* MinasGerais = new EstadosEleitores;
+
+    // ---- 12 Amazonas ----
+    EstadosEleitores* Amazonas = new EstadosEleitores;
+
+    // ---- 13 Rondonia ----
+    EstadosEleitores* Rondonia = new EstadosEleitores;
+
+    // ---- 14 Roraima ----
+    EstadosEleitores* Roraima = new EstadosEleitores;
+
+    // ---- 15 Tocantins ----
+    EstadosEleitores* Tocantins = new EstadosEleitores;
+
+    // ---- 16 Amapa ----
+    EstadosEleitores* Amapa = new EstadosEleitores;
+
+    // ---- 17 Sergipe ----
+    EstadosEleitores* Sergipe = new EstadosEleitores;
+
+    // ---- 18 Acre ----
+    EstadosEleitores* Acre = new EstadosEleitores;
+
+    // ---- 19 Pernambuco ----
+    EstadosEleitores* Pernambuco = new EstadosEleitores;
+
+    // ---- 20 Rio Grande do Norte ----
+    EstadosEleitores* RioGrandeDoNorte = new EstadosEleitores;
+    
+    // ---- 21 Bahia ----
+    EstadosEleitores* Bahia = new EstadosEleitores;
+
+    // ---- 22 Para ----
+    EstadosEleitores* Para = new EstadosEleitores;
+
+    // ---- 23 Ceara ----
+    EstadosEleitores* Ceara = new EstadosEleitores;
+
+    // ---- 24 Paraiba ----
+    EstadosEleitores* Paraiba = new EstadosEleitores;
+
+    // ---- 25 Alagoas ----
+    EstadosEleitores* Alagoas = new EstadosEleitores;
+
+    // ---- 26 Piaui ----
+    EstadosEleitores* Piaui = new EstadosEleitores;
+
+    // ---- 27 Maranhao ----
+    EstadosEleitores* Maranhao = new EstadosEleitores;
+
     
 }
