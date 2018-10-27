@@ -158,7 +158,7 @@ int main(){
     DistritoFederal-> rendaPerCapta = 2548;
     DistritoFederal-> ensinoSuperior = 0.1749;
     DistritoFederal-> partidoMaisInf[3] = ;
-    DistritoFederal-> setorMaisImport = ;
+    DistritoFederal-> setorMaisImport = 3;
     DistritoFederal-> iGini = 0.555;
     DistritoFederal-> taxaHomi = 18.2;
     DistritoFederal-> porcIdosos = 0.114;
@@ -192,7 +192,7 @@ int main(){
     RioDeJaneiro-> rendaPerCapta = 1445;
     RioDeJaneiro-> ensinoSuperior = 0.1091;
     RioDeJaneiro-> partidoMaisInf[3] = ;
-    RioDeJaneiro-> setorMaisImport = ;
+    RioDeJaneiro-> setorMaisImport = 3;
     RioDeJaneiro-> iGini = 0.503;
     RioDeJaneiro-> taxaHomi = 40.4;
     RioDeJaneiro-> porcIdosos = 0.175;
@@ -209,7 +209,7 @@ int main(){
     SantaCatarina-> rendaPerCapta = 1597;
     SantaCatarina-> ensinoSuperior = 0.0971;
     SantaCatarina-> partidoMaisInf[3] = ;
-    SantaCatarina-> setorMaisImport = ;
+    SantaCatarina-> setorMaisImport = 1;
     SantaCatarina-> iGini = 0.419;
     SantaCatarina-> taxaHomi = 16.5;
     SantaCatarina-> porcIdosos = 0.152;
@@ -226,7 +226,7 @@ int main(){
     RioGrandeDoSul-> rendaPerCapta = 1635;
     RioGrandeDoSul-> ensinoSuperior = 0.0867;
     RioGrandeDoSul-> partidoMaisInf[3] = ;
-    RioGrandeDoSul-> setorMaisImport = ;
+    RioGrandeDoSul-> setorMaisImport = 3;
     RioGrandeDoSul-> iGini = 0.454;
     RioGrandeDoSul-> taxaHomi = 26.7;
     RioGrandeDoSul-> porcIdosos = 0.178;
@@ -243,7 +243,7 @@ int main(){
     Parana-> rendaPerCapta = 1472;
     Parana-> ensinoSuperior = 0.0971;
     Parana-> partidoMaisInf[3] = ;
-    Parana-> setorMaisImport = ;
+    Parana-> setorMaisImport = 1;
     Parana-> iGini = 0.465;
     Parana-> taxaHomi = 22.6;
     Parana-> porcIdosos = 0.146;
@@ -260,7 +260,7 @@ int main(){
     MatoGrosso-> rendaPerCapta = 1291;
     MatoGrosso-> ensinoSuperior = 0.0765;
     MatoGrosso-> partidoMaisInf[3] = ;
-    MatoGrosso-> setorMaisImport = ;
+    MatoGrosso-> setorMaisImport = 1;
     MatoGrosso-> iGini = 0.445;
     MatoGrosso-> taxaHomi = 31.5;
     MatoGrosso-> porcIdosos = 0.114;
@@ -277,7 +277,7 @@ int main(){
     MatoGrossoDoSul-> rendaPerCapta = 1291;
     MatoGrossoDoSul-> ensinoSuperior = 0.0886;
     MatoGrossoDoSul-> partidoMaisInf[3] = ;
-    MatoGrossoDoSul-> setorMaisImport = ;
+    MatoGrossoDoSul-> setorMaisImport = 1;
     MatoGrossoDoSul-> iGini = 0.479;
     MatoGrossoDoSul-> taxaHomi = 20.8;
     MatoGrossoDoSul-> porcIdosos = 0.133;
@@ -294,7 +294,7 @@ int main(){
     EspiritoSanto-> rendaPerCapta = 1205;
     EspiritoSanto-> ensinoSuperior = 0.0834;
     EspiritoSanto-> partidoMaisInf[3] = ;
-    EspiritoSanto-> setorMaisImport = ;
+    EspiritoSanto-> setorMaisImport = 3;
     EspiritoSanto-> iGini = 0.471;
     EspiritoSanto-> taxaHomi = 37.4;
     EspiritoSanto-> porcIdosos = 0.148;
@@ -311,7 +311,7 @@ int main(){
     Goias-> rendaPerCapta = 1277;
     Goias-> ensinoSuperior = 0.0775;
     Goias-> partidoMaisInf[3] = ;
-    Goias-> setorMaisImport = ;
+    Goias-> setorMaisImport = 3;
     Goias-> iGini = 0.436;
     Goias-> taxaHomi = 39.3;
     Goias-> porcIdosos = 0.124;
@@ -328,7 +328,7 @@ int main(){
     MinasGerais-> rendaPerCapta = 1224;
     MinasGerais-> ensinoSuperior = 0.0795;
     MinasGerais-> partidoMaisInf[3] = ;
-    MinasGerais-> setorMaisImport = ;
+    MinasGerais-> setorMaisImport = 3;
     MinasGerais-> iGini = 0.478;
     MinasGerais-> taxaHomi = 19.6;
     MinasGerais-> porcIdosos = 0.151;
@@ -345,7 +345,7 @@ int main(){
     Amazonas-> rendaPerCapta = 850;
     Amazonas-> ensinoSuperior = 0.532;
     Amazonas-> partidoMaisInf[3] = ;
-    Amazonas-> setorMaisImport = ;
+    Amazonas-> setorMaisImport = 3;
     Amazonas-> iGini = 0.476;
     Amazonas-> taxaHomi = 31.3;
     Amazonas-> porcIdosos = 0.088;
@@ -362,7 +362,7 @@ int main(){
     Rondonia-> rendaPerCapta = 957;
     Rondonia-> ensinoSuperior = 0.0566;
     Rondonia-> partidoMaisInf[3] = ;
-    Rondonia-> setorMaisImport = ;
+    Rondonia-> setorMaisImport = 1;
     Rondonia-> iGini = 0.452;
     Rondonia-> taxaHomi = 28.1;
     Rondonia-> porcIdosos = 0.102;
@@ -379,7 +379,7 @@ int main(){
     Roraima-> rendaPerCapta = 1006;
     Roraima-> ensinoSuperior = 0.0672;
     Roraima-> partidoMaisInf[3] = ;
-    Roraima-> setorMaisImport = ;
+    Roraima-> setorMaisImport = 1;
     Roraima-> iGini = 0.5;
     Roraima-> taxaHomi = 44;
     Roraima-> porcIdosos = 0.08;
@@ -396,7 +396,7 @@ int main(){
     Tocantins-> rendaPerCapta = 937;
     Tocantins-> ensinoSuperior = 0.0705;
     Tocantins-> partidoMaisInf[3] = ;
-    Tocantins-> setorMaisImport = ;
+    Tocantins-> setorMaisImport = 1;
     Tocantins-> iGini = 0.504;
     Tocantins-> taxaHomi = 26.6;
     Tocantins-> porcIdosos = 0.13;
@@ -413,7 +413,7 @@ int main(){
     Amapa-> rendaPerCapta = 936;
     Amapa-> ensinoSuperior = 0.0698;
     Amapa-> partidoMaisInf[3] = ;
-    Amapa-> setorMaisImport = ;
+    Amapa-> setorMaisImport = 1;
     Amapa-> iGini = 0.457;
     Amapa-> taxaHomi = 53.9;
     Amapa-> porcIdosos = 0.08;
@@ -431,7 +431,7 @@ int main(){
     Sergipe-> rendaPerCapta = 836;
     Sergipe-> ensinoSuperior = 0.0600;
     Sergipe-> partidoMaisInf[3] = ;
-    Sergipe-> setorMaisImport = ;
+    Sergipe-> setorMaisImport = 3;
     Sergipe-> iGini = 0.47;
     Sergipe-> taxaHomi = 55.7;
     Sergipe-> porcIdosos = 0.118;
@@ -448,7 +448,7 @@ int main(){
     Acre-> rendaPerCapta = 769;
     Acre-> ensinoSuperior = 0.0583;
     Acre-> partidoMaisInf[3] = ;
-    Acre-> setorMaisImport = ;
+    Acre-> setorMaisImport = 1;
     Acre-> iGini = 0.5;
     Acre-> taxaHomi = 63.9;
     Acre-> porcIdosos = 0.088;
@@ -465,7 +465,7 @@ int main(){
     Pernambuco-> rendaPerCapta = 852;
     Pernambuco-> ensinoSuperior = 0.0567;
     Pernambuco-> partidoMaisInf[3] = ;
-    Pernambuco-> setorMaisImport = ;
+    Pernambuco-> setorMaisImport = 3;
     Pernambuco-> iGini = 0.492;
     Pernambuco-> taxaHomi = 57.3;
     Pernambuco-> porcIdosos = 0.148;
@@ -482,7 +482,7 @@ int main(){
     RioGrandeDoNorte-> rendaPerCapta = 845;
     RioGrandeDoNorte-> ensinoSuperior = 0.0589;
     RioGrandeDoNorte-> partidoMaisInf[3] = ;
-    RioGrandeDoNorte-> setorMaisImport = ;
+    RioGrandeDoNorte-> setorMaisImport = 1;
     RioGrandeDoNorte-> iGini = 0.487;
     RioGrandeDoNorte-> taxaHomi = 68;
     RioGrandeDoNorte-> porcIdosos = 0.126;
@@ -499,7 +499,7 @@ int main(){
     Bahia-> rendaPerCapta = 862;
     Bahia-> ensinoSuperior = 0.0451;
     Bahia-> partidoMaisInf[3] = ;
-    Bahia-> setorMaisImport = ;
+    Bahia-> setorMaisImport = 1;
     Bahia-> iGini = 0.481;
     Bahia-> taxaHomi = 45.1;
     Bahia-> porcIdosos = 0.134;
@@ -516,7 +516,7 @@ int main(){
     Para-> rendaPerCapta = 715;
     Para-> ensinoSuperior = 0.0406;
     Para-> partidoMaisInf[3] = ;
-    Para-> setorMaisImport = ;
+    Para-> setorMaisImport = 1;
     Para-> iGini = 0.459;
     Para-> taxaHomi = 53.4;
     Para-> porcIdosos = 0.106;
@@ -533,7 +533,7 @@ int main(){
     Ceara-> rendaPerCapta = 824;
     Ceara-> ensinoSuperior = 0.0496;
     Ceara-> partidoMaisInf[3] = ;
-    Ceara-> setorMaisImport = ;
+    Ceara-> setorMaisImport = 3;
     Ceara-> iGini = 0.453;
     Ceara-> taxaHomi = 59.1;
     Ceara-> porcIdosos = 0.149;
@@ -550,7 +550,7 @@ int main(){
     Paraiba-> rendaPerCapta = 928;
     Paraiba-> ensinoSuperior = 0.0571;
     Paraiba-> partidoMaisInf[3] = ;
-    Paraiba-> setorMaisImport = ;
+    Paraiba-> setorMaisImport = 3;
     Paraiba-> iGini = 0.51;
     Paraiba-> taxaHomi = 31.9;
     Paraiba-> porcIdosos = 0.135;
@@ -567,7 +567,7 @@ int main(){
     Alagoas-> rendaPerCapta = 658;
     Alagoas-> ensinoSuperior = 0.0466;
     Alagoas-> partidoMaisInf[3] = ;
-    Alagoas-> setorMaisImport = ;
+    Alagoas-> setorMaisImport = 1;
     Alagoas-> iGini = 0.438;
     Alagoas-> taxaHomi = 56.9;
     Alagoas-> porcIdosos = 0.128;
@@ -584,7 +584,7 @@ int main(){
     Piaui-> rendaPerCapta = 715;
     Piaui-> ensinoSuperior = 0.0510;
     Piaui-> partidoMaisInf[3] = ;
-    Piaui-> setorMaisImport = ;
+    Piaui-> setorMaisImport = 2;
     Piaui-> iGini = 0.505;
     Piaui-> taxaHomi = 20.2;
     Piaui-> porcIdosos = 0.121;
