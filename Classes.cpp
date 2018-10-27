@@ -158,7 +158,7 @@ int main(){
     DistritoFederal-> religiosidade = 0.8240;
     DistritoFederal-> rendaPerCapta = 2548;
     DistritoFederal-> ensinoSuperior = 0.1749;
-    DistritoFederal -> analfabetismo =;
+    DistritoFederal -> analfabetismo = 0.026;
     DistritoFederal-> partidoMaisInf[3] = ;
     DistritoFederal-> setorMaisImport = ;
     DistritoFederal-> iGini = 0.555;
@@ -176,6 +176,7 @@ int main(){
     SaoPaulo-> religiosidade = 0.842;
     SaoPaulo-> rendaPerCapta = 1712;
     SaoPaulo-> ensinoSuperior = 0.1167;
+    SaoPaulo -> analfabetismo = 0.028;
     SaoPaulo-> partidoMaisInf[3] = ;
     SaoPaulo-> setorMaisImport = 3;
     SaoPaulo-> iGini = 0.46;
@@ -193,6 +194,7 @@ int main(){
     RioDeJaneiro-> religiosidade = 0.7520;
     RioDeJaneiro-> rendaPerCapta = 1445;
     RioDeJaneiro-> ensinoSuperior = 0.1091;
+    RioDeJaneiro -> analfabetismo = 0.027;
     RioDeJaneiro-> partidoMaisInf[3] = ;
     RioDeJaneiro-> setorMaisImport = ;
     RioDeJaneiro-> iGini = 0.503;
@@ -210,6 +212,7 @@ int main(){
     SantaCatarina-> religiosidade = 0.9310;
     SantaCatarina-> rendaPerCapta = 1597;
     SantaCatarina-> ensinoSuperior = 0.0971;
+    SantaCatarina-> analfabetismo = 0.028;
     SantaCatarina-> partidoMaisInf[3] = ;
     SantaCatarina-> setorMaisImport = ;
     SantaCatarina-> iGini = 0.419;
@@ -227,6 +230,7 @@ int main(){
     RioGrandeDoSul-> religiosidade = 87.10;
     RioGrandeDoSul-> rendaPerCapta = 1635;
     RioGrandeDoSul-> ensinoSuperior = 0.0867;
+    RioGrandeDoSul-> analfabetismo = 0.032;
     RioGrandeDoSul-> partidoMaisInf[3] = ;
     RioGrandeDoSul-> setorMaisImport = ;
     RioGrandeDoSul-> iGini = 0.454;
@@ -244,6 +248,7 @@ int main(){
     Parana-> religiosidade = 89.9;
     Parana-> rendaPerCapta = 1472;
     Parana-> ensinoSuperior = 0.0971;
+    Parana-> analfabetismo = 0.045;
     Parana-> partidoMaisInf[3] = ;
     Parana-> setorMaisImport = ;
     Parana-> iGini = 0.465;
@@ -261,6 +266,7 @@ int main(){
     MatoGrosso-> religiosidade = 87.9;
     MatoGrosso-> rendaPerCapta = 1291;
     MatoGrosso-> ensinoSuperior = 0.0765;
+    MatoGrosso-> analfabetismo = 0.065;
     MatoGrosso-> partidoMaisInf[3] = ;
     MatoGrosso-> setorMaisImport = ;
     MatoGrosso-> iGini = 0.445;
@@ -278,6 +284,7 @@ int main(){
     MatoGrossoDoSul-> religiosidade = 93.9;
     MatoGrossoDoSul-> rendaPerCapta = 1291;
     MatoGrossoDoSul-> ensinoSuperior = 0.0886;
+    MatoGrossoDoSul-> analfabetismo = 0.063;
     MatoGrossoDoSul-> partidoMaisInf[3] = ;
     MatoGrossoDoSul-> setorMaisImport = ;
     MatoGrossoDoSul-> iGini = 0.479;
@@ -295,6 +302,7 @@ int main(){
     EspiritoSanto-> religiosidade = 0.853;
     EspiritoSanto-> rendaPerCapta = 1205;
     EspiritoSanto-> ensinoSuperior = 0.0834;
+    EspiritoSanto-> analfabetismo = 0.062;
     EspiritoSanto-> partidoMaisInf[3] = ;
     EspiritoSanto-> setorMaisImport = ;
     EspiritoSanto-> iGini = 0.471;
@@ -312,6 +320,7 @@ int main(){
     Goias-> religiosidade = 0.869;
     Goias-> rendaPerCapta = 1277;
     Goias-> ensinoSuperior = 0.0775;
+    Goias-> analfabetismo = 0.065;
     Goias-> partidoMaisInf[3] = ;
     Goias-> setorMaisImport = ;
     Goias-> iGini = 0.436;
@@ -329,6 +338,7 @@ int main(){
     MinasGerais-> religiosidade = 0.906;
     MinasGerais-> rendaPerCapta = 1224;
     MinasGerais-> ensinoSuperior = 0.0795;
+    MinasGerais-> analfabetismo = 0.062;
     MinasGerais-> partidoMaisInf[3] = ;
     MinasGerais-> setorMaisImport = ;
     MinasGerais-> iGini = 0.478;
@@ -346,6 +356,7 @@ int main(){
     Amazonas-> religiosidade = 0.8950;
     Amazonas-> rendaPerCapta = 850;
     Amazonas-> ensinoSuperior = 0.532;
+    Amazonas-> analfabetismo = 0.069;
     Amazonas-> partidoMaisInf[3] = ;
     Amazonas-> setorMaisImport = ;
     Amazonas-> iGini = 0.476;
@@ -363,6 +374,7 @@ int main(){
     Rondonia-> religiosidade = 0.814;
     Rondonia-> rendaPerCapta = 957;
     Rondonia-> ensinoSuperior = 0.0566;
+    Rondonia-> analfabetismo = 0.067;
     Rondonia-> partidoMaisInf[3] = ;
     Rondonia-> setorMaisImport = ;
     Rondonia-> iGini = 0.452;
@@ -380,6 +392,7 @@ int main(){
     Roraima-> religiosidade = 78.2;
     Roraima-> rendaPerCapta = 1006;
     Roraima-> ensinoSuperior = 0.0672;
+    Roraima-> analfabetismo = 0.066;
     Roraima-> partidoMaisInf[3] = ;
     Roraima-> setorMaisImport = ;
     Roraima-> iGini = 0.5;
@@ -397,6 +410,7 @@ int main(){
     Tocantins-> religiosidade = 0.913;
     Tocantins-> rendaPerCapta = 937;
     Tocantins-> ensinoSuperior = 0.0705;
+    Tocantins-> analfabetismo = 0.104;
     Tocantins-> partidoMaisInf[3] = ;
     Tocantins-> setorMaisImport = ;
     Tocantins-> iGini = 0.504;
@@ -414,6 +428,7 @@ int main(){
     Amapa-> religiosidade = 0.915;
     Amapa-> rendaPerCapta = 936;
     Amapa-> ensinoSuperior = 0.0698;
+    Amapa-> analfabetismo = 0.05;
     Amapa-> partidoMaisInf[3] = ;
     Amapa-> setorMaisImport = ;
     Amapa-> iGini = 0.457;
@@ -432,6 +447,7 @@ int main(){
     Sergipe-> religiosidade = 0.882;
     Sergipe-> rendaPerCapta = 836;
     Sergipe-> ensinoSuperior = 0.0600;
+    Sergipe-> analfabetismo = 0.147;
     Sergipe-> partidoMaisInf[3] = ;
     Sergipe-> setorMaisImport = ;
     Sergipe-> iGini = 0.47;
@@ -449,6 +465,7 @@ int main(){
     Acre-> religiosidade = 0.846;
     Acre-> rendaPerCapta = 769;
     Acre-> ensinoSuperior = 0.0583;
+    Acre-> analfabetismo = 0.131;
     Acre-> partidoMaisInf[3] = ;
     Acre-> setorMaisImport = ;
     Acre-> iGini = 0.5;
@@ -466,6 +483,7 @@ int main(){
     Pernambuco-> religiosidade = 0.906;
     Pernambuco-> rendaPerCapta = 852;
     Pernambuco-> ensinoSuperior = 0.0567;
+    Pernambuco-> analfabetismo = 0.128;
     Pernambuco-> partidoMaisInf[3] = ;
     Pernambuco-> setorMaisImport = ;
     Pernambuco-> iGini = 0.492;
@@ -483,6 +501,7 @@ int main(){
     RioGrandeDoNorte-> religiosidade = 0.9140;
     RioGrandeDoNorte-> rendaPerCapta = 845;
     RioGrandeDoNorte-> ensinoSuperior = 0.0589;
+    RioGrandeDoNorte-> analfabetismo = 0.147;
     RioGrandeDoNorte-> partidoMaisInf[3] = ;
     RioGrandeDoNorte-> setorMaisImport = ;
     RioGrandeDoNorte-> iGini = 0.487;
@@ -500,6 +519,7 @@ int main(){
     Bahia-> religiosidade = 0.826;
     Bahia-> rendaPerCapta = 862;
     Bahia-> ensinoSuperior = 0.0451;
+    Bahia-> analfabetismo = 0.130;
     Bahia-> partidoMaisInf[3] = ;
     Bahia-> setorMaisImport = ;
     Bahia-> iGini = 0.481;
@@ -517,6 +537,7 @@ int main(){
     Para-> religiosidade = 0.895;
     Para-> rendaPerCapta = 715;
     Para-> ensinoSuperior = 0.0406;
+    Para-> analfabetismo = 0.093;
     Para-> partidoMaisInf[3] = ;
     Para-> setorMaisImport = ;
     Para-> iGini = 0.459;
@@ -534,6 +555,7 @@ int main(){
     Ceara-> religiosidade = 0.934;
     Ceara-> rendaPerCapta = 824;
     Ceara-> ensinoSuperior = 0.0496;
+    Ceara-> analfabetismo = 0.152;
     Ceara-> partidoMaisInf[3] = ;
     Ceara-> setorMaisImport = ;
     Ceara-> iGini = 0.453;
@@ -551,6 +573,7 @@ int main(){
     Paraiba-> religiosidade = 0.921;
     Paraiba-> rendaPerCapta = 928;
     Paraiba-> ensinoSuperior = 0.0571;
+    Paraiba-> analfabetismo = 0.163;
     Paraiba-> partidoMaisInf[3] = ;
     Paraiba-> setorMaisImport = ;
     Paraiba-> iGini = 0.51;
@@ -568,6 +591,7 @@ int main(){
     Alagoas-> religiosidade = 0.8810;
     Alagoas-> rendaPerCapta = 658;
     Alagoas-> ensinoSuperior = 0.0466;
+    Alagoas-> analfabetismo = 0.194;
     Alagoas-> partidoMaisInf[3] = ;
     Alagoas-> setorMaisImport = ;
     Alagoas-> iGini = 0.438;
@@ -585,6 +609,7 @@ int main(){
     Piaui-> religiosidade = 0.9480;
     Piaui-> rendaPerCapta = 715;
     Piaui-> ensinoSuperior = 0.0510;
+    Piaui-> analfabetismo = 0.172;
     Piaui-> partidoMaisInf[3] = ;
     Piaui-> setorMaisImport = ;
     Piaui-> iGini = 0.505;
@@ -602,6 +627,7 @@ int main(){
     Maranhao-> religiosidade = 0.917;
     Maranhao-> rendaPerCapta = 597;
     Maranhao-> ensinoSuperior = 0.0356;
+    Maranhao-> analfabetismo = 0.167; 
     Maranhao-> partidoMaisInf[3] = ;
     Maranhao-> setorMaisImport = 1;
     Maranhao-> iGini = 0.506;
