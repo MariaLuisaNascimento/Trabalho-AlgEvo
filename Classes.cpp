@@ -156,18 +156,7 @@ int main(){
     DistritoFederal-> popVotante = 0.01395;
     DistritoFederal-> religiosidade = 0.8240;
     DistritoFederal-> rendaPerCapta = 2548;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     DistritoFederal-> ensinoSuperior = 0.1749;
-=======
-<<<<<<< HEAD
-    DistritoFederal-> escolaridade = ;
-    DistritoFederal-> partidoMaisInf[] = {};
-=======
->>>>>>> 33111ddc20cd83578424d8ba9a1bebb3703bdb40
-    DistritoFederal-> escolaridade = 0.1749;
->>>>>>> a201cc434357700a45afabf0ec9804c3f6500242
     DistritoFederal-> partidoMaisInf[3] = ;
     DistritoFederal-> setorMaisImport = ;
     DistritoFederal-> iGini = 0.555;
@@ -612,7 +601,7 @@ int main(){
     Maranhao-> rendaPerCapta = 597;
     Maranhao-> ensinoSuperior = 0.0356;
     Maranhao-> partidoMaisInf[3] = ;
-    Maranhao-> setorMaisImport = ;
+    Maranhao-> setorMaisImport = 1;
     Maranhao-> iGini = 0.506;
     Maranhao-> taxaHomi = 29.4;
     Maranhao-> porcIdosos = 0.113;
