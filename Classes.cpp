@@ -156,7 +156,7 @@ int main(){
     DistritoFederal-> popVotante = 0.01395;
     DistritoFederal-> religiosidade = ;
     DistritoFederal-> rendaPerCapta = 2548;
-    DistritoFederal-> escolaridade = ;
+    DistritoFederal-> escolaridade = 0.1749;
     DistritoFederal-> partidoMaisInf[3] = ;
     DistritoFederal-> setorMaisImport = ;
     DistritoFederal-> iGini = 0.555;
@@ -173,7 +173,7 @@ int main(){
     SaoPaulo-> popVotante = 0.22269;
     SaoPaulo-> religiosidade = ;
     SaoPaulo-> rendaPerCapta = 1712;
-    SaoPaulo-> escolaridade = ;
+    SaoPaulo-> escolaridade = 0.1167;
     SaoPaulo-> partidoMaisInf[3] = ;
     SaoPaulo-> setorMaisImport = ;
     SaoPaulo-> iGini = 0.46;
@@ -190,7 +190,7 @@ int main(){
     RioDeJaneiro-> popVotante = 0.08477;
     RioDeJaneiro-> religiosidade = ;
     RioDeJaneiro-> rendaPerCapta = 1445;
-    RioDeJaneiro-> escolaridade = ;
+    RioDeJaneiro-> escolaridade = 0.1091;
     RioDeJaneiro-> partidoMaisInf[3] = ;
     RioDeJaneiro-> setorMaisImport = ;
     RioDeJaneiro-> iGini = 0.503;
@@ -207,7 +207,7 @@ int main(){
     SantaCatarina-> popVotante = 0.3364;
     SantaCatarina-> religiosidade = ;
     SantaCatarina-> rendaPerCapta = 1597;
-    SantaCatarina-> escolaridade = ;
+    SantaCatarina-> escolaridade = 0.0971;
     SantaCatarina-> partidoMaisInf[3] = ;
     SantaCatarina-> setorMaisImport = ;
     SantaCatarina-> iGini = 0.419;
@@ -224,7 +224,7 @@ int main(){
     RioGrandeDoSul-> popVotante = 0.05866;
     RioGrandeDoSul-> religiosidade = ;
     RioGrandeDoSul-> rendaPerCapta = 1635;
-    RioGrandeDoSul-> escolaridade = ;
+    RioGrandeDoSul-> escolaridade = 0.0867;
     RioGrandeDoSul-> partidoMaisInf[3] = ;
     RioGrandeDoSul-> setorMaisImport = ;
     RioGrandeDoSul-> iGini = 0.454;
@@ -241,7 +241,7 @@ int main(){
     Parana-> popVotante = 0.05456;
     Parana-> religiosidade = ;
     Parana-> rendaPerCapta = 1472;
-    Parana-> escolaridade = ;
+    Parana-> escolaridade = 0.0971;
     Parana-> partidoMaisInf[3] = ;
     Parana-> setorMaisImport = ;
     Parana-> iGini = 0.465;
@@ -258,7 +258,7 @@ int main(){
     MatoGrosso-> popVotante = 0.01541;
     MatoGrosso-> religiosidade = ;
     MatoGrosso-> rendaPerCapta = 1291;
-    MatoGrosso-> escolaridade = ;
+    MatoGrosso-> escolaridade = 0.0765;
     MatoGrosso-> partidoMaisInf[3] = ;
     MatoGrosso-> setorMaisImport = ;
     MatoGrosso-> iGini = 0.445;
@@ -275,7 +275,7 @@ int main(){
     MatoGrossoDoSul-> popVotante = 0.01257;
     MatoGrossoDoSul-> religiosidade = ;
     MatoGrossoDoSul-> rendaPerCapta = 1291;
-    MatoGrossoDoSul-> escolaridade = ;
+    MatoGrossoDoSul-> escolaridade = 0.0886;
     MatoGrossoDoSul-> partidoMaisInf[3] = ;
     MatoGrossoDoSul-> setorMaisImport = ;
     MatoGrossoDoSul-> iGini = 0.479;
@@ -292,7 +292,7 @@ int main(){
     EspiritoSanto-> popVotante = 0.01851;
     EspiritoSanto-> religiosidade = ;
     EspiritoSanto-> rendaPerCapta = 1205;
-    EspiritoSanto-> escolaridade = ;
+    EspiritoSanto-> escolaridade = 0.0834;
     EspiritoSanto-> partidoMaisInf[3] = ;
     EspiritoSanto-> setorMaisImport = ;
     EspiritoSanto-> iGini = 0.471;
@@ -309,7 +309,7 @@ int main(){
     Goias-> popVotante = 0.03053;
     Goias-> religiosidade = ;
     Goias-> rendaPerCapta = 1277;
-    Goias-> escolaridade = ;
+    Goias-> escolaridade = 0.0775;
     Goias-> partidoMaisInf[3] = ;
     Goias-> setorMaisImport = ;
     Goias-> iGini = 0.436;
@@ -326,7 +326,7 @@ int main(){
     MinasGerais-> popVotante = 0.10617;
     MinasGerais-> religiosidade = ;
     MinasGerais-> rendaPerCapta = 1224;
-    MinasGerais-> escolaridade = ;
+    MinasGerais-> escolaridade = 0.0795;
     MinasGerais-> partidoMaisInf[3] = ;
     MinasGerais-> setorMaisImport = ;
     MinasGerais-> iGini = 0.478;
@@ -343,7 +343,7 @@ int main(){
     Amazonas-> popVotante = 0.01550;
     Amazonas-> religiosidade = ;
     Amazonas-> rendaPerCapta = 850;
-    Amazonas-> escolaridade = ;
+    Amazonas-> escolaridade = 0.532;
     Amazonas-> partidoMaisInf[3] = ;
     Amazonas-> setorMaisImport = ;
     Amazonas-> iGini = 0.476;
@@ -360,7 +360,7 @@ int main(){
     Rondonia-> popVotante = 0.0775;
     Rondonia-> religiosidade = ;
     Rondonia-> rendaPerCapta = 957;
-    Rondonia-> escolaridade = ;
+    Rondonia-> escolaridade = 0.0566;
     Rondonia-> partidoMaisInf[3] = ;
     Rondonia-> setorMaisImport = ;
     Rondonia-> iGini = 0.452;
@@ -377,7 +377,7 @@ int main(){
     Roraima-> popVotante = 0.00216;
     Roraima-> religiosidade = ;
     Roraima-> rendaPerCapta = 1006;
-    Roraima-> escolaridade = ;
+    Roraima-> escolaridade = 0.0672;
     Roraima-> partidoMaisInf[3] = ;
     Roraima-> setorMaisImport = ;
     Roraima-> iGini = 0.5;
@@ -394,7 +394,7 @@ int main(){
     Tocantins-> popVotante = 0.00704;
     Tocantins-> religiosidade = ;
     Tocantins-> rendaPerCapta = 937;
-    Tocantins-> escolaridade = ;
+    Tocantins-> escolaridade = 0.0705;
     Tocantins-> partidoMaisInf[3] = ;
     Tocantins-> setorMaisImport = ;
     Tocantins-> iGini = 0.504;
@@ -411,7 +411,7 @@ int main(){
     Amapa-> popVotante = 0.00336;
     Amapa-> religiosidade = ;
     Amapa-> rendaPerCapta = 936;
-    Amapa-> escolaridade = ;
+    Amapa-> escolaridade = 0.0698;
     Amapa-> partidoMaisInf[3] = ;
     Amapa-> setorMaisImport = ;
     Amapa-> iGini = 0.457;
@@ -429,7 +429,7 @@ int main(){
     Sergipe-> popVotante = 0.01;
     Sergipe-> religiosidade = ;
     Sergipe-> rendaPerCapta = 836;
-    Sergipe-> escolaridade = ;
+    Sergipe-> escolaridade = 0.0600;
     Sergipe-> partidoMaisInf[3] = ;
     Sergipe-> setorMaisImport = ;
     Sergipe-> iGini = 0.47;
@@ -446,7 +446,7 @@ int main(){
     Acre-> popVotante = 0.00360;
     Acre-> religiosidade = ;
     Acre-> rendaPerCapta = 769;
-    Acre-> escolaridade = ;
+    Acre-> escolaridade = 0.0583;
     Acre-> partidoMaisInf[3] = ;
     Acre-> setorMaisImport = ;
     Acre-> iGini = 0.5;
@@ -463,7 +463,7 @@ int main(){
     Pernambuco-> popVotante = 0.0462;
     Pernambuco-> religiosidade = ;
     Pernambuco-> rendaPerCapta = 852;
-    Pernambuco-> escolaridade = ;
+    Pernambuco-> escolaridade = 0.0567;
     Pernambuco-> partidoMaisInf[3] = ;
     Pernambuco-> setorMaisImport = ;
     Pernambuco-> iGini = 0.492;
@@ -480,7 +480,7 @@ int main(){
     RioGrandeDoNorte-> popVotante = 0.01660;
     RioGrandeDoNorte-> religiosidade = ;
     RioGrandeDoNorte-> rendaPerCapta = 845;
-    RioGrandeDoNorte-> escolaridade = ;
+    RioGrandeDoNorte-> escolaridade = 0.0589;
     RioGrandeDoNorte-> partidoMaisInf[3] = ;
     RioGrandeDoNorte-> setorMaisImport = ;
     RioGrandeDoNorte-> iGini = 0.487;
@@ -497,7 +497,7 @@ int main(){
     Bahia-> popVotante = 0.07146;
     Bahia-> religiosidade = ;
     Bahia-> rendaPerCapta = 862;
-    Bahia-> escolaridade = ;
+    Bahia-> escolaridade = 0.0451;
     Bahia-> partidoMaisInf[3] = ;
     Bahia-> setorMaisImport = ;
     Bahia-> iGini = 0.481;
@@ -514,7 +514,7 @@ int main(){
     Para-> popVotante = 0.03614;
     Para-> religiosidade = ;
     Para-> rendaPerCapta = 715;
-    Para-> escolaridade = ;
+    Para-> escolaridade = 0.0406;
     Para-> partidoMaisInf[3] = ;
     Para-> setorMaisImport = ;
     Para-> iGini = 0.459;
@@ -531,7 +531,7 @@ int main(){
     Ceara-> popVotante = 0.04406;
     Ceara-> religiosidade = ;
     Ceara-> rendaPerCapta = 824;
-    Ceara-> escolaridade = ;
+    Ceara-> escolaridade = 0.0496;
     Ceara-> partidoMaisInf[3] = ;
     Ceara-> setorMaisImport = ;
     Ceara-> iGini = 0.453;
@@ -548,7 +548,7 @@ int main(){
     Paraiba-> popVotante = 0.02014;
     Paraiba-> religiosidade = ;
     Paraiba-> rendaPerCapta = 928;
-    Paraiba-> escolaridade = ;
+    Paraiba-> escolaridade = 0.0571;
     Paraiba-> partidoMaisInf[3] = ;
     Paraiba-> setorMaisImport = ;
     Paraiba-> iGini = 0.51;
@@ -565,7 +565,7 @@ int main(){
     Alagoas-> popVotante = 0.01367;
     Alagoas-> religiosidade = ;
     Alagoas-> rendaPerCapta = 658;
-    Alagoas-> escolaridade = ;
+    Alagoas-> escolaridade = 0.0466;
     Alagoas-> partidoMaisInf[3] = ;
     Alagoas-> setorMaisImport = ;
     Alagoas-> iGini = 0.438;
@@ -582,7 +582,7 @@ int main(){
     Piaui-> popVotante = 0.0167;
     Piaui-> religiosidade = ;
     Piaui-> rendaPerCapta = 715;
-    Piaui-> escolaridade = ;
+    Piaui-> escolaridade = 0.0510;
     Piaui-> partidoMaisInf[3] = ;
     Piaui-> setorMaisImport = ;
     Piaui-> iGini = 0.505;
@@ -599,7 +599,7 @@ int main(){
     Maranhao-> popVotante = 0.03208;
     Maranhao-> religiosidade = ;
     Maranhao-> rendaPerCapta = 597;
-    Maranhao-> escolaridade = ;
+    Maranhao-> escolaridade = 0.0356;
     Maranhao-> partidoMaisInf[3] = ;
     Maranhao-> setorMaisImport = ;
     Maranhao-> iGini = 0.506;
