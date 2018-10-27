@@ -40,10 +40,10 @@ class Candidato{
 
 class EstadosEleitores{ 
     public:
-    double cAlta;
-    double cMediaAlta;
-    double cMediaBaixa;
-    double cBaixa;
+    double classeA;
+    double classeB;
+    double classeC;
+    double classesED;
     double popVotante;
     double religiosidade;
     //Determinantes IDH
@@ -149,15 +149,15 @@ int main(){
     //---- 1 Distrito Federal ----
     EstadosEleitores* DistritoFederal = new EstadosEleitores;
 
-    DistritoFederal-> cAlta = ;
-    DistritoFederal-> cMediaAlta = ;
-    DistritoFederal-> cMediaBaixa = ;
-    DistritoFederal-> cBaixa = ;
+    DistritoFederal-> classeA = 0.0228;
+    DistritoFederal-> classeB = 0.0252;
+    DistritoFederal-> classeC = 0.1402;
+    DistritoFederal-> classesED = 0.5048;
     DistritoFederal-> popVotante = 0.01395;
     DistritoFederal-> religiosidade = ;
     DistritoFederal-> rendaPerCapta = 2548;
     DistritoFederal-> escolaridade = ;
-    DistritoFederal-> partidoMaisInf[3] = ;
+    DistritoFederal-> partidoMaisInf[] = {};
     DistritoFederal-> setorMaisImport = ;
     DistritoFederal-> iGini = 0.555;
     DistritoFederal-> taxaHomi = 18.2;
@@ -166,16 +166,16 @@ int main(){
     //---- 2 Sao Paulo ----
     EstadosEleitores* SaoPaulo = new EstadosEleitores;
 
-    SaoPaulo-> cAlta = ;
-    SaoPaulo-> cMediaAlta = ;
-    SaoPaulo-> cMediaBaixa = ;
-    SaoPaulo-> cBaixa = ;
+    SaoPaulo-> classeA = 0.0054;
+    SaoPaulo-> classeB = 0.0191;
+    SaoPaulo-> classeC = 0.0805;
+    SaoPaulo-> classesED = 0.5814;
     SaoPaulo-> popVotante = 0.22269;
     SaoPaulo-> religiosidade = ;
     SaoPaulo-> rendaPerCapta = 1712;
     SaoPaulo-> escolaridade = ;
     SaoPaulo-> partidoMaisInf[3] = ;
-    SaoPaulo-> setorMaisImport = ;
+    SaoPaulo-> setorMaisImport = 3;
     SaoPaulo-> iGini = 0.46;
     SaoPaulo-> taxaHomi = 10.7;
     SaoPaulo-> porcIdosos = 0.153;
@@ -183,10 +183,10 @@ int main(){
     //---- 3 Rio de Janeiro ----
     EstadosEleitores* RioDeJaneiro = new EstadosEleitores;
 
-    RioDeJaneiro-> cAlta = ;
-    RioDeJaneiro-> cMediaAlta = ;
-    RioDeJaneiro-> cMediaBaixa = ;
-    RioDeJaneiro-> cBaixa = ;
+    RioDeJaneiro-> classeA = 0.0072;
+    RioDeJaneiro-> classeB = 0.0186;
+    RioDeJaneiro-> classeC = 0.0848;
+    RioDeJaneiro-> classesED = 0.58;
     RioDeJaneiro-> popVotante = 0.08477;
     RioDeJaneiro-> religiosidade = ;
     RioDeJaneiro-> rendaPerCapta = 1445;
@@ -200,10 +200,10 @@ int main(){
     //---- 4 Santa Catarina -----
     EstadosEleitores* SantaCatarina = new EstadosEleitores;
 
-    SantaCatarina-> cAlta = ;
-    SantaCatarina-> cMediaAlta = ;
-    SantaCatarina-> cMediaBaixa = ;
-    SantaCatarina-> cBaixa = ;
+    SantaCatarina-> classeA = 0.0036;
+    SantaCatarina-> classeB = 0.0158;
+    SantaCatarina-> classeC = 0.0766;
+    SantaCatarina-> classesED = 0.6153;
     SantaCatarina-> popVotante = 0.3364;
     SantaCatarina-> religiosidade = ;
     SantaCatarina-> rendaPerCapta = 1597;
@@ -217,10 +217,10 @@ int main(){
     // ---- 5 Rio Grande do Sul ----
     EstadosEleitores* RioGrandeDoSul = new EstadosEleitores;
 
-    RioGrandeDoSul-> cAlta = ;
-    RioGrandeDoSul-> cMediaAlta = ;
-    RioGrandeDoSul-> cMediaBaixa = ;
-    RioGrandeDoSul-> cBaixa = ;
+    RioGrandeDoSul-> classeA = 0.005;
+    RioGrandeDoSul-> classeB = 0.0151;
+    RioGrandeDoSul-> classeC = 0.095;
+    RioGrandeDoSul-> classesED = 0.5928;
     RioGrandeDoSul-> popVotante = 0.05866;
     RioGrandeDoSul-> religiosidade = ;
     RioGrandeDoSul-> rendaPerCapta = 1635;
@@ -234,10 +234,10 @@ int main(){
     // ---- 6 Parana ----
     EstadosEleitores* Parana = new EstadosEleitores;
 
-    Parana-> cAlta = ;
-    Parana-> cMediaAlta = ;
-    Parana-> cMediaBaixa = ;
-    Parana-> cBaixa = ;
+    Parana-> classeA = 0.0047;
+    Parana-> classeB = 0.0169;
+    Parana-> classeC = 0.0895;
+    Parana-> classesED = 0.6013;
     Parana-> popVotante = 0.05456;
     Parana-> religiosidade = ;
     Parana-> rendaPerCapta = 1472;
@@ -251,10 +251,10 @@ int main(){
     // ---- 7 Mato Grosso ----
     EstadosEleitores* MatoGrosso = new EstadosEleitores;
 
-    MatoGrosso-> cAlta = ;
-    MatoGrosso-> cMediaAlta = ;
-    MatoGrosso-> cMediaBaixa = ;
-    MatoGrosso-> cBaixa = ;
+    MatoGrosso-> classeA = 0.003;
+    MatoGrosso-> classeB = 0.0138;
+    MatoGrosso-> classeC = 0.0905;
+    MatoGrosso-> classesED = 0.6001;
     MatoGrosso-> popVotante = 0.01541;
     MatoGrosso-> religiosidade = ;
     MatoGrosso-> rendaPerCapta = 1291;
@@ -268,10 +268,10 @@ int main(){
     // ---- 8 Mato Grosso do Sul ----
     EstadosEleitores* MatoGrossoDoSul = new EstadosEleitores;
 
-    MatoGrossoDoSul-> cAlta = ;
-    MatoGrossoDoSul-> cMediaAlta = ;
-    MatoGrossoDoSul-> cMediaBaixa = ;
-    MatoGrossoDoSul-> cBaixa = ;
+    MatoGrossoDoSul-> classeA = 0.0054;
+    MatoGrossoDoSul-> classeB = 0.0168;
+    MatoGrossoDoSul-> classeC = 0.1064;
+    MatoGrossoDoSul-> classesED = 0.6071;
     MatoGrossoDoSul-> popVotante = 0.01257;
     MatoGrossoDoSul-> religiosidade = ;
     MatoGrossoDoSul-> rendaPerCapta = 1291;
@@ -285,10 +285,10 @@ int main(){
     // ---- 9 Espirito Santo ----
     EstadosEleitores* EspiritoSanto = new EstadosEleitores;
 
-    EspiritoSanto-> cAlta = ;
-    EspiritoSanto-> cMediaAlta = ;
-    EspiritoSanto-> cMediaBaixa = ;
-    EspiritoSanto-> cBaixa = ;
+    EspiritoSanto-> classeA = 0.0021;
+    EspiritoSanto-> classeB = 0.0157;
+    EspiritoSanto-> classeC = 0.0911;
+    EspiritoSanto-> classesED = 0.5813;
     EspiritoSanto-> popVotante = 0.01851;
     EspiritoSanto-> religiosidade = ;
     EspiritoSanto-> rendaPerCapta = 1205;
@@ -302,10 +302,10 @@ int main(){
     // ---- 10 Goias ----
     EstadosEleitores* Goias = new EstadosEleitores;
 
-    Goias-> cAlta = ;
-    Goias-> cMediaAlta = ;
-    Goias-> cMediaBaixa = ;
-    Goias-> cBaixa = ;
+    Goias-> classeA = 0.0025;
+    Goias-> classeB = 0.0099;
+    Goias-> classeC = 0.087;
+    Goias-> classesED = 0.6119;
     Goias-> popVotante = 0.03053;
     Goias-> religiosidade = ;
     Goias-> rendaPerCapta = 1277;
@@ -319,10 +319,10 @@ int main(){
     // ---- 11 Minas Gerais ----
     EstadosEleitores* MinasGerais = new EstadosEleitores;
 
-    MinasGerais-> cAlta = ;
-    MinasGerais-> cMediaAlta = ;
-    MinasGerais-> cMediaBaixa = ;
-    MinasGerais-> cBaixa = ;
+    MinasGerais-> classeA = 0.0039;
+    MinasGerais-> classeB = 0.0136;
+    MinasGerais-> classeC = 0.0912;
+    MinasGerais-> classesED = 0.6032;
     MinasGerais-> popVotante = 0.10617;
     MinasGerais-> religiosidade = ;
     MinasGerais-> rendaPerCapta = 1224;
@@ -336,10 +336,10 @@ int main(){
     // ---- 12 Amazonas ----
     EstadosEleitores* Amazonas = new EstadosEleitores;
 
-    Amazonas-> cAlta = ;
-    Amazonas-> cMediaAlta = ;
-    Amazonas-> cMediaBaixa = ;
-    Amazonas-> cBaixa = ;
+    Amazonas-> classeA = 0.0012;
+    Amazonas-> classeB = 0.0078;
+    Amazonas-> classeC = 0.0661;
+    Amazonas-> classesED = 0.5377;
     Amazonas-> popVotante = 0.01550;
     Amazonas-> religiosidade = ;
     Amazonas-> rendaPerCapta = 850;
@@ -353,10 +353,10 @@ int main(){
     // ---- 13 Rondonia ----
     EstadosEleitores* Rondonia = new EstadosEleitores;
 
-    Rondonia-> cAlta = ;
-    Rondonia-> cMediaAlta = ;
-    Rondonia-> cMediaBaixa = ;
-    Rondonia-> cBaixa = ;
+    Rondonia-> classeA = 0.0014;
+    Rondonia-> classeB = 0.0088;
+    Rondonia-> classeC = 0.092;
+    Rondonia-> classesED = 0.5751;
     Rondonia-> popVotante = 0.0775;
     Rondonia-> religiosidade = ;
     Rondonia-> rendaPerCapta = 957;
@@ -370,10 +370,10 @@ int main(){
     // ---- 14 Roraima ----
     EstadosEleitores* Roraima = new EstadosEleitores;
 
-    Roraima-> cAlta = ;
-    Roraima-> cMediaAlta = ;
-    Roraima-> cMediaBaixa = ;
-    Roraima-> cBaixa = ;
+    Roraima-> classeA = 0.0029;
+    Roraima-> classeB = 0.0128;
+    Roraima-> classeC = 0.0978;
+    Roraima-> classesED = 0.5686;
     Roraima-> popVotante = 0.00216;
     Roraima-> religiosidade = ;
     Roraima-> rendaPerCapta = 1006;
@@ -387,10 +387,10 @@ int main(){
     // ---- 15 Tocantins ----
     EstadosEleitores* Tocantins = new EstadosEleitores;
 
-    Tocantins-> cAlta = ;
-    Tocantins-> cMediaAlta = ;
-    Tocantins-> cMediaBaixa = ;
-    Tocantins-> cBaixa = ;
+    Tocantins-> classeA = 0.0033;
+    Tocantins-> classeB = 0.0104;
+    Tocantins-> classeC = 0.0754;
+    Tocantins-> classesED = 0.5944;
     Tocantins-> popVotante = 0.00704;
     Tocantins-> religiosidade = ;
     Tocantins-> rendaPerCapta = 937;
@@ -404,10 +404,10 @@ int main(){
     // ---- 16 Amapa ----
     EstadosEleitores* Amapa = new EstadosEleitores;
 
-    Amapa-> cAlta = ;
-    Amapa-> cMediaAlta = ;
-    Amapa-> cMediaBaixa = ;
-    Amapa-> cBaixa = ;
+    Amapa-> classeA = 0;
+    Amapa-> classeB = 0.0076;
+    Amapa-> classeC = 0.0881;
+    Amapa-> classesED = 0.5396;
     Amapa-> popVotante = 0.00336;
     Amapa-> religiosidade = ;
     Amapa-> rendaPerCapta = 936;
@@ -422,10 +422,10 @@ int main(){
     // ---- 17 Sergipe ----
     EstadosEleitores* Sergipe = new EstadosEleitores;
 
-    Sergipe-> cAlta = ;
-    Sergipe-> cMediaAlta = ;
-    Sergipe-> cMediaBaixa = ;
-    Sergipe-> cBaixa = ;
+    Sergipe-> classeA = 0.004;
+    Sergipe-> classeB = 0.0063;
+    Sergipe-> classeC = 0.0507;
+    Sergipe-> classesED = 0.638;
     Sergipe-> popVotante = 0.01;
     Sergipe-> religiosidade = ;
     Sergipe-> rendaPerCapta = 836;
@@ -439,10 +439,10 @@ int main(){
     // ---- 18 Acre ----
     EstadosEleitores* Acre = new EstadosEleitores;
 
-    Acre-> cAlta = ;
-    Acre-> cMediaAlta = ;
-    Acre-> cMediaBaixa = ;
-    Acre-> cBaixa = ;
+    Acre-> classeA = 0.003;
+    Acre-> classeB = 0.0054;
+    Acre-> classeC = 0.0678;
+    Acre-> classesED = 0.5576;
     Acre-> popVotante = 0.00360;
     Acre-> religiosidade = ;
     Acre-> rendaPerCapta = 769;
@@ -456,10 +456,10 @@ int main(){
     // ---- 19 Pernambuco ----
     EstadosEleitores* Pernambuco = new EstadosEleitores;
 
-    Pernambuco-> cAlta = ;
-    Pernambuco-> cMediaAlta = ;
-    Pernambuco-> cMediaBaixa = ;
-    Pernambuco-> cBaixa = ;
+    Pernambuco-> classeA = 0.0022;
+    Pernambuco-> classeB = 0.0075;
+    Pernambuco-> classeC = 0.0495;
+    Pernambuco-> classesED = 0.6075;
     Pernambuco-> popVotante = 0.0462;
     Pernambuco-> religiosidade = ;
     Pernambuco-> rendaPerCapta = 852;
@@ -473,10 +473,10 @@ int main(){
     // ---- 20 Rio Grande do Norte ----
     EstadosEleitores* RioGrandeDoNorte = new EstadosEleitores;
 
-    RioGrandeDoNorte-> cAlta = ;
-    RioGrandeDoNorte-> cMediaAlta = ;
-    RioGrandeDoNorte-> cMediaBaixa = ;
-    RioGrandeDoNorte-> cBaixa = ;
+    RioGrandeDoNorte-> classeA = 0.0012;
+    RioGrandeDoNorte-> classeB = 0.0074;
+    RioGrandeDoNorte-> classeC = 0.067;
+    RioGrandeDoNorte-> classesED = 0.6088;
     RioGrandeDoNorte-> popVotante = 0.01660;
     RioGrandeDoNorte-> religiosidade = ;
     RioGrandeDoNorte-> rendaPerCapta = 845;
@@ -490,10 +490,10 @@ int main(){
     // ---- 21 Bahia ----
     EstadosEleitores* Bahia = new EstadosEleitores;
 
-    Bahia-> cAlta = ;
-    Bahia-> cMediaAlta = ;
-    Bahia-> cMediaBaixa = ;
-    Bahia-> cBaixa = ;
+    Bahia-> classeA = 0.0017;
+    Bahia-> classeB = 0.0056;
+    Bahia-> classeC = 0.0496;
+    Bahia-> classesED = 0.6415;
     Bahia-> popVotante = 0.07146;
     Bahia-> religiosidade = ;
     Bahia-> rendaPerCapta = 862;
@@ -507,10 +507,10 @@ int main(){
     // ---- 22 Para ----
     EstadosEleitores* Para = new EstadosEleitores;
 
-    Para-> cAlta = ;
-    Para-> cMediaAlta = ;
-    Para-> cMediaBaixa = ;
-    Para-> cBaixa = ;
+    Para-> classeA = 0.0011;
+    Para-> classeB = 0.0044;
+    Para-> classeC = 0.049;
+    Para-> classesED = 0.5969;
     Para-> popVotante = 0.03614;
     Para-> religiosidade = ;
     Para-> rendaPerCapta = 715;
@@ -524,10 +524,10 @@ int main(){
     // ---- 23 Ceara ----
     EstadosEleitores* Ceara = new EstadosEleitores;
 
-    Ceara-> cAlta = ;
-    Ceara-> cMediaAlta = ;
-    Ceara-> cMediaBaixa = ;
-    Ceara-> cBaixa = ;
+    Ceara-> classeA = 0.0012;
+    Ceara-> classeB = 0.047;
+    Ceara-> classeC = 0.0403;
+    Ceara-> classesED = 0.6271;
     Ceara-> popVotante = 0.04406;
     Ceara-> religiosidade = ;
     Ceara-> rendaPerCapta = 824;
@@ -541,10 +541,10 @@ int main(){
     // ---- 24 Paraiba ----
     EstadosEleitores* Paraiba = new EstadosEleitores;
 
-    Paraiba-> cAlta = ;
-    Paraiba-> cMediaAlta = ;
-    Paraiba-> cMediaBaixa = ;
-    Paraiba-> cBaixa = ;
+    Paraiba-> classeA = 0.0019;
+    Paraiba-> classeB = 0.0089;
+    Paraiba-> classeC = 0.0627;
+    Paraiba-> classesED = 0.6295;
     Paraiba-> popVotante = 0.02014;
     Paraiba-> religiosidade = ;
     Paraiba-> rendaPerCapta = 928;
@@ -558,10 +558,10 @@ int main(){
     // ---- 25 Alagoas ----
     EstadosEleitores* Alagoas = new EstadosEleitores;
 
-    Alagoas-> cAlta = ;
-    Alagoas-> cMediaAlta = ;
-    Alagoas-> cMediaBaixa = ;
-    Alagoas-> cBaixa = ;
+    Alagoas-> classeA = 0.0004;
+    Alagoas-> classeB = 0.0031;
+    Alagoas-> classeC = 0.0444;
+    Alagoas-> classesED = 0.6034;
     Alagoas-> popVotante = 0.01367;
     Alagoas-> religiosidade = ;
     Alagoas-> rendaPerCapta = 658;
@@ -575,10 +575,10 @@ int main(){
     // ---- 26 Piaui ----
     EstadosEleitores* Piaui = new EstadosEleitores;
 
-    Piaui-> cAlta = ;
-    Piaui-> cMediaAlta = ;
-    Piaui-> cMediaBaixa = ;
-    Piaui-> cBaixa = ;
+    Piaui-> classeA = 0.0025;
+    Piaui-> classeB = 0.0031;
+    Piaui-> classeC = 0.0468;
+    Piaui-> classesED = 0.6446;
     Piaui-> popVotante = 0.0167;
     Piaui-> religiosidade = ;
     Piaui-> rendaPerCapta = 715;
@@ -592,10 +592,10 @@ int main(){
     // ---- 27 Maranhao ----
     EstadosEleitores* Maranhao = new EstadosEleitores;
 
-    Maranhao-> cAlta = ;
-    Maranhao-> cMediaAlta = ;
-    Maranhao-> cMediaBaixa = ;
-    Maranhao-> cBaixa = ;
+    Maranhao-> classeA = 0.002;
+    Maranhao-> classeB = 0.059;
+    Maranhao-> classeC = 0.0364;
+    Maranhao-> classesED = 0.6083;
     Maranhao-> popVotante = 0.03208;
     Maranhao-> religiosidade = ;
     Maranhao-> rendaPerCapta = 597;
