@@ -6,7 +6,7 @@
 
 using namespace std;
 
-
+/* ---------------------------------------------------- DECLARAR AS CLASSES ----------------------------------------------------------------------------*/
 class Candidato{ 
     //Parametros
     public:
@@ -50,21 +50,82 @@ class EstadosEleitores{
     double rendaPerCapta;
     double ensinoSuperior;
     double analfabetismo;
-    //acho que pode ser um vetor com porcentagem de direita esquerda e talz
-    double partidoMaisInf[3];
+    /*-3 é extrema esquerda, -2 é esquerda, -1 é centro-esquerda, 0 é centro,
+    3 é extrema direita, 2 é direta e 1 é centro-direita*/
+    int partidoMaisInf;
     //vamos fazer 1- primário, 2- sec e 3 - ter
     int setorMaisImport;
     double iGini;
     double taxaHomi;
     double porcIdosos;
-
-
 };
 
+/* ---------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
+/* ------------------------------------------------- DECLARAR AS FUNCOES DA EVOLUCAO -----------------------------------------------------------*/
+
+void ParametrosDaEvolucao (EstadosEleitores* DistritoFederal, EstadosEleitores* SaoPaulo, EstadosEleitores* RioDeJaneiro, EstadosEleitores* SantaCatarina,
+EstadosEleitores* RioGrandeDoSul, EstadosEleitores* Parana, EstadosEleitores* MatoGrosso, EstadosEleitores* MatoGrossoDoSul, EstadosEleitores* EspiritoSanto,
+EstadosEleitores* Goias, EstadosEleitores* MinasGerais, EstadosEleitores* Amazonas, EstadosEleitores* Rondonia, EstadosEleitores* Roraima, EstadosEleitores* Tocantins,
+EstadosEleitores* Amapa, EstadosEleitores* Sergipe, EstadosEleitores* Acre, EstadosEleitores* Pernambuco, EstadosEleitores* RioGrandeDoNorte, EstadosEleitores* Bahia,
+EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, EstadosEleitores* Alagoas, EstadosEleitores* Piaui, EstadosEleitores* Maranhao);
+
+void Evolucao(Candidato* candidatoTeste);
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+
 int main(){
-    Candidato* candidatoTeste = new Candidato;
-    srand( (unsigned)time(NULL) );
+/* ---------------------------------------------------- SETAR ESTADOS BRASILEIROS ------------------------------------------------------------------*/
+    EstadosEleitores* DistritoFederal = new EstadosEleitores;       //1
+    EstadosEleitores* SaoPaulo = new EstadosEleitores;              //2
+    EstadosEleitores* RioDeJaneiro = new EstadosEleitores;          //3
+    EstadosEleitores* SantaCatarina = new EstadosEleitores;         //4
+    EstadosEleitores* RioGrandeDoSul = new EstadosEleitores;        //5
+    EstadosEleitores* Parana = new EstadosEleitores;                //6
+    EstadosEleitores* MatoGrosso = new EstadosEleitores;            //7
+    EstadosEleitores* MatoGrossoDoSul = new EstadosEleitores;       //8
+    EstadosEleitores* EspiritoSanto = new EstadosEleitores;         //9
+    EstadosEleitores* Goias = new EstadosEleitores;                 //10
+    EstadosEleitores* MinasGerais = new EstadosEleitores;           //11
+    EstadosEleitores* Amazonas = new EstadosEleitores;              //12
+    EstadosEleitores* Rondonia = new EstadosEleitores;              //13
+    EstadosEleitores* Roraima = new EstadosEleitores;               //14
+    EstadosEleitores* Tocantins = new EstadosEleitores;             //15
+    EstadosEleitores* Amapa = new EstadosEleitores;                 //16
+    EstadosEleitores* Sergipe = new EstadosEleitores;               //17
+    EstadosEleitores* Acre = new EstadosEleitores;                  //18
+    EstadosEleitores* Pernambuco = new EstadosEleitores;            //19
+    EstadosEleitores* RioGrandeDoNorte = new EstadosEleitores;      //20
+    EstadosEleitores* Bahia = new EstadosEleitores;                 //21
+    EstadosEleitores* Para = new EstadosEleitores;                  //22
+    EstadosEleitores* Ceara = new EstadosEleitores;                 //23
+    EstadosEleitores* Paraiba = new EstadosEleitores;               //24
+    EstadosEleitores* Alagoas = new EstadosEleitores;               //25
+    EstadosEleitores* Piaui = new EstadosEleitores;                 //26
+    EstadosEleitores* Maranhao = new EstadosEleitores;              //27
     
+    ParametrosDaEvolucao(DistritoFederal,SaoPaulo,RioDeJaneiro,SantaCatarina,RioGrandeDoSul,Parana,MatoGrosso,MatoGrossoDoSul,EspiritoSanto,
+Goias,MinasGerais,Amazonas,Rondonia,Roraima,Tocantins,Amapa,Sergipe,Acre,Pernambuco,RioGrandeDoNorte,Bahia,Para,Ceara,Paraiba,Alagoas,Piaui,Maranhao);
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+   
+/* ---------------------------------------------------- EVOLUIR O CANDIDATO ---------------------------------------------------------------------------*/   
+    Candidato* candidatoTeste = new Candidato;
+    Evolucao(candidatoTeste);
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+    return 0;
+}
+
+
+
+void Evolucao(Candidato* candidatoTeste){
+     //---- Inicilalizando os genes da especie que serão evoluídos -----
+    double gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13;
+
+     srand( (unsigned)time(NULL) );
+
     //---- Inicializando os parametros do candidato ----- (acho que a evolução sera neles)
     candidatoTeste -> educacao = (((double)((rand()%101))/100));
     candidatoTeste -> educacaoSexual = (((double)((rand()%101))/100));
@@ -142,14 +203,15 @@ int main(){
         printf("O candidato tem um viés social de direita\n");
     else 
         printf("O candidato tem um viés social de esquerda\n");
+}
 
-
-
-    // Setar os estados, acredito que quando formos setar os dados é bom que pegar os dados de um mesmo site
-    
+void ParametrosDaEvolucao (EstadosEleitores* DistritoFederal, EstadosEleitores* SaoPaulo, EstadosEleitores* RioDeJaneiro, EstadosEleitores* SantaCatarina,
+EstadosEleitores* RioGrandeDoSul, EstadosEleitores* Parana, EstadosEleitores* MatoGrosso, EstadosEleitores* MatoGrossoDoSul, EstadosEleitores* EspiritoSanto,
+EstadosEleitores* Goias, EstadosEleitores* MinasGerais, EstadosEleitores* Amazonas, EstadosEleitores* Rondonia, EstadosEleitores* Roraima, EstadosEleitores* Tocantins,
+EstadosEleitores* Amapa, EstadosEleitores* Sergipe, EstadosEleitores* Acre, EstadosEleitores* Pernambuco, EstadosEleitores* RioGrandeDoNorte, EstadosEleitores* Bahia,
+EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, EstadosEleitores* Alagoas, EstadosEleitores* Piaui, EstadosEleitores* Maranhao){
+ 
     //---- 1 Distrito Federal ----
-    EstadosEleitores* DistritoFederal = new EstadosEleitores;
-
     DistritoFederal-> classeA = 0.0228;
     DistritoFederal-> classeB = 0.0252;
     DistritoFederal-> classeC = 0.1402;
@@ -159,15 +221,13 @@ int main(){
     DistritoFederal-> rendaPerCapta = 2548;
     DistritoFederal-> ensinoSuperior = 0.1749;
     DistritoFederal -> analfabetismo = 0.026;
-    DistritoFederal-> partidoMaisInf[3] = ;
+    DistritoFederal-> partidoMaisInf = -1; //2016 PT presidente
     DistritoFederal-> setorMaisImport = 3;
     DistritoFederal-> iGini = 0.555;
     DistritoFederal-> taxaHomi = 18.2;
     DistritoFederal-> porcIdosos = 0.114;
 
     //---- 2 Sao Paulo ----
-    EstadosEleitores* SaoPaulo = new EstadosEleitores;
-
     SaoPaulo-> classeA = 0.0054;
     SaoPaulo-> classeB = 0.0191;
     SaoPaulo-> classeC = 0.0805;
@@ -177,15 +237,13 @@ int main(){
     SaoPaulo-> rendaPerCapta = 1712;
     SaoPaulo-> ensinoSuperior = 0.1167;
     SaoPaulo -> analfabetismo = 0.028;
-    SaoPaulo-> partidoMaisInf[3] = ;
+    SaoPaulo-> partidoMaisInf = 1; //PSDB
     SaoPaulo-> setorMaisImport = 3;
     SaoPaulo-> iGini = 0.46;
     SaoPaulo-> taxaHomi = 10.7;
     SaoPaulo-> porcIdosos = 0.153;
 
     //---- 3 Rio de Janeiro ----
-    EstadosEleitores* RioDeJaneiro = new EstadosEleitores;
-
     RioDeJaneiro-> classeA = 0.0072;
     RioDeJaneiro-> classeB = 0.0186;
     RioDeJaneiro-> classeC = 0.0848;
@@ -195,15 +253,13 @@ int main(){
     RioDeJaneiro-> rendaPerCapta = 1445;
     RioDeJaneiro-> ensinoSuperior = 0.1091;
     RioDeJaneiro -> analfabetismo = 0.027;
-    RioDeJaneiro-> partidoMaisInf[3] = ;
+    RioDeJaneiro-> partidoMaisInf = 0; //PMDB
     RioDeJaneiro-> setorMaisImport = 3;
     RioDeJaneiro-> iGini = 0.503;
     RioDeJaneiro-> taxaHomi = 40.4;
     RioDeJaneiro-> porcIdosos = 0.175;
 
     //---- 4 Santa Catarina -----
-    EstadosEleitores* SantaCatarina = new EstadosEleitores;
-
     SantaCatarina-> classeA = 0.0036;
     SantaCatarina-> classeB = 0.0158;
     SantaCatarina-> classeC = 0.0766;
@@ -213,15 +269,13 @@ int main(){
     SantaCatarina-> rendaPerCapta = 1597;
     SantaCatarina-> ensinoSuperior = 0.0971;
     SantaCatarina-> analfabetismo = 0.028;
-    SantaCatarina-> partidoMaisInf[3] = ;
+    SantaCatarina-> partidoMaisInf = 0; //PMDB
     SantaCatarina-> setorMaisImport = 1;
     SantaCatarina-> iGini = 0.419;
     SantaCatarina-> taxaHomi = 16.5;
     SantaCatarina-> porcIdosos = 0.152;
 
     // ---- 5 Rio Grande do Sul ----
-    EstadosEleitores* RioGrandeDoSul = new EstadosEleitores;
-
     RioGrandeDoSul-> classeA = 0.005;
     RioGrandeDoSul-> classeB = 0.0151;
     RioGrandeDoSul-> classeC = 0.095;
@@ -231,15 +285,13 @@ int main(){
     RioGrandeDoSul-> rendaPerCapta = 1635;
     RioGrandeDoSul-> ensinoSuperior = 0.0867;
     RioGrandeDoSul-> analfabetismo = 0.032;
-    RioGrandeDoSul-> partidoMaisInf[3] = ;
+    RioGrandeDoSul-> partidoMaisInf = 0; //PMDB
     RioGrandeDoSul-> setorMaisImport = 3;
     RioGrandeDoSul-> iGini = 0.454;
     RioGrandeDoSul-> taxaHomi = 26.7;
     RioGrandeDoSul-> porcIdosos = 0.178;
 
     // ---- 6 Parana ----
-    EstadosEleitores* Parana = new EstadosEleitores;
-
     Parana-> classeA = 0.0047;
     Parana-> classeB = 0.0169;
     Parana-> classeC = 0.0895;
@@ -249,15 +301,13 @@ int main(){
     Parana-> rendaPerCapta = 1472;
     Parana-> ensinoSuperior = 0.0971;
     Parana-> analfabetismo = 0.045;
-    Parana-> partidoMaisInf[3] = ;
+    Parana-> partidoMaisInf = 1; //PSDB
     Parana-> setorMaisImport = 1;
     Parana-> iGini = 0.465;
     Parana-> taxaHomi = 22.6;
     Parana-> porcIdosos = 0.146;
 
     // ---- 7 Mato Grosso ----
-    EstadosEleitores* MatoGrosso = new EstadosEleitores;
-
     MatoGrosso-> classeA = 0.003;
     MatoGrosso-> classeB = 0.0138;
     MatoGrosso-> classeC = 0.0905;
@@ -267,15 +317,13 @@ int main(){
     MatoGrosso-> rendaPerCapta = 1291;
     MatoGrosso-> ensinoSuperior = 0.0765;
     MatoGrosso-> analfabetismo = 0.065;
-    MatoGrosso-> partidoMaisInf[3] = ;
+    MatoGrosso-> partidoMaisInf = 1; //PSDB
     MatoGrosso-> setorMaisImport = 1;
     MatoGrosso-> iGini = 0.445;
     MatoGrosso-> taxaHomi = 31.5;
     MatoGrosso-> porcIdosos = 0.114;
 
     // ---- 8 Mato Grosso do Sul ----
-    EstadosEleitores* MatoGrossoDoSul = new EstadosEleitores;
-
     MatoGrossoDoSul-> classeA = 0.0054;
     MatoGrossoDoSul-> classeB = 0.0168;
     MatoGrossoDoSul-> classeC = 0.1064;
@@ -285,15 +333,13 @@ int main(){
     MatoGrossoDoSul-> rendaPerCapta = 1291;
     MatoGrossoDoSul-> ensinoSuperior = 0.0886;
     MatoGrossoDoSul-> analfabetismo = 0.063;
-    MatoGrossoDoSul-> partidoMaisInf[3] = ;
+    MatoGrossoDoSul-> partidoMaisInf = 1; //PSDB
     MatoGrossoDoSul-> setorMaisImport = 1;
     MatoGrossoDoSul-> iGini = 0.479;
     MatoGrossoDoSul-> taxaHomi = 20.8;
     MatoGrossoDoSul-> porcIdosos = 0.133;
 
     // ---- 9 Espirito Santo ----
-    EstadosEleitores* EspiritoSanto = new EstadosEleitores;
-
     EspiritoSanto-> classeA = 0.0021;
     EspiritoSanto-> classeB = 0.0157;
     EspiritoSanto-> classeC = 0.0911;
@@ -303,15 +349,13 @@ int main(){
     EspiritoSanto-> rendaPerCapta = 1205;
     EspiritoSanto-> ensinoSuperior = 0.0834;
     EspiritoSanto-> analfabetismo = 0.062;
-    EspiritoSanto-> partidoMaisInf[3] = ;
+    EspiritoSanto-> partidoMaisInf = 0; //PMDB
     EspiritoSanto-> setorMaisImport = 3;
     EspiritoSanto-> iGini = 0.471;
     EspiritoSanto-> taxaHomi = 37.4;
     EspiritoSanto-> porcIdosos = 0.148;
 
     // ---- 10 Goias ----
-    EstadosEleitores* Goias = new EstadosEleitores;
-
     Goias-> classeA = 0.0025;
     Goias-> classeB = 0.0099;
     Goias-> classeC = 0.087;
@@ -321,15 +365,13 @@ int main(){
     Goias-> rendaPerCapta = 1277;
     Goias-> ensinoSuperior = 0.0775;
     Goias-> analfabetismo = 0.065;
-    Goias-> partidoMaisInf[3] = ;
+    Goias-> partidoMaisInf = 0; //PMDB
     Goias-> setorMaisImport = 3;
     Goias-> iGini = 0.436;
     Goias-> taxaHomi = 39.3;
     Goias-> porcIdosos = 0.124;
 
     // ---- 11 Minas Gerais ----
-    EstadosEleitores* MinasGerais = new EstadosEleitores;
-
     MinasGerais-> classeA = 0.0039;
     MinasGerais-> classeB = 0.0136;
     MinasGerais-> classeC = 0.0912;
@@ -339,15 +381,13 @@ int main(){
     MinasGerais-> rendaPerCapta = 1224;
     MinasGerais-> ensinoSuperior = 0.0795;
     MinasGerais-> analfabetismo = 0.062;
-    MinasGerais-> partidoMaisInf[3] = ;
+    MinasGerais-> partidoMaisInf = 0; //PMDB
     MinasGerais-> setorMaisImport = 1;
     MinasGerais-> iGini = 0.478;
     MinasGerais-> taxaHomi = 19.6;
     MinasGerais-> porcIdosos = 0.151;
 
     // ---- 12 Amazonas ----
-    EstadosEleitores* Amazonas = new EstadosEleitores;
-
     Amazonas-> classeA = 0.0012;
     Amazonas-> classeB = 0.0078;
     Amazonas-> classeC = 0.0661;
@@ -357,15 +397,13 @@ int main(){
     Amazonas-> rendaPerCapta = 850;
     Amazonas-> ensinoSuperior = 0.532;
     Amazonas-> analfabetismo = 0.069;
-    Amazonas-> partidoMaisInf[3] = ;
+    Amazonas-> partidoMaisInf = 1; //PSDB
     Amazonas-> setorMaisImport = 3;
     Amazonas-> iGini = 0.476;
     Amazonas-> taxaHomi = 31.3;
     Amazonas-> porcIdosos = 0.088;
 
     // ---- 13 Rondonia ----
-    EstadosEleitores* Rondonia = new EstadosEleitores;
-
     Rondonia-> classeA = 0.0014;
     Rondonia-> classeB = 0.0088;
     Rondonia-> classeC = 0.092;
@@ -375,15 +413,13 @@ int main(){
     Rondonia-> rendaPerCapta = 957;
     Rondonia-> ensinoSuperior = 0.0566;
     Rondonia-> analfabetismo = 0.067;
-    Rondonia-> partidoMaisInf[3] = ;
+    Rondonia-> partidoMaisInf = 0; //PMDB
     Rondonia-> setorMaisImport = 1;
     Rondonia-> iGini = 0.452;
     Rondonia-> taxaHomi = 28.1;
     Rondonia-> porcIdosos = 0.102;
 
     // ---- 14 Roraima ----
-    EstadosEleitores* Roraima = new EstadosEleitores;
-
     Roraima-> classeA = 0.0029;
     Roraima-> classeB = 0.0128;
     Roraima-> classeC = 0.0978;
@@ -393,15 +429,13 @@ int main(){
     Roraima-> rendaPerCapta = 1006;
     Roraima-> ensinoSuperior = 0.0672;
     Roraima-> analfabetismo = 0.066;
-    Roraima-> partidoMaisInf[3] = ;
+    Roraima-> partidoMaisInf = 0; //PMDB
     Roraima-> setorMaisImport = 1;
     Roraima-> iGini = 0.5;
     Roraima-> taxaHomi = 44;
     Roraima-> porcIdosos = 0.08;
 
     // ---- 15 Tocantins ----
-    EstadosEleitores* Tocantins = new EstadosEleitores;
-
     Tocantins-> classeA = 0.0033;
     Tocantins-> classeB = 0.0104;
     Tocantins-> classeC = 0.0754;
@@ -411,15 +445,13 @@ int main(){
     Tocantins-> rendaPerCapta = 937;
     Tocantins-> ensinoSuperior = 0.0705;
     Tocantins-> analfabetismo = 0.104;
-    Tocantins-> partidoMaisInf[3] = ;
+    Tocantins-> partidoMaisInf = 0; //PMDB
     Tocantins-> setorMaisImport = 1;
     Tocantins-> iGini = 0.504;
     Tocantins-> taxaHomi = 26.6;
     Tocantins-> porcIdosos = 0.13;
 
     // ---- 16 Amapa ----
-    EstadosEleitores* Amapa = new EstadosEleitores;
-
     Amapa-> classeA = 0;
     Amapa-> classeB = 0.0076;
     Amapa-> classeC = 0.0881;
@@ -429,7 +461,7 @@ int main(){
     Amapa-> rendaPerCapta = 936;
     Amapa-> ensinoSuperior = 0.0698;
     Amapa-> analfabetismo = 0.05;
-    Amapa-> partidoMaisInf[3] = ;
+    Amapa-> partidoMaisInf = -1; //rede
     Amapa-> setorMaisImport = 1;
     Amapa-> iGini = 0.457;
     Amapa-> taxaHomi = 53.9;
@@ -437,8 +469,6 @@ int main(){
 
 
     // ---- 17 Sergipe ----
-    EstadosEleitores* Sergipe = new EstadosEleitores;
-
     Sergipe-> classeA = 0.004;
     Sergipe-> classeB = 0.0063;
     Sergipe-> classeC = 0.0507;
@@ -448,15 +478,13 @@ int main(){
     Sergipe-> rendaPerCapta = 836;
     Sergipe-> ensinoSuperior = 0.0600;
     Sergipe-> analfabetismo = 0.147;
-    Sergipe-> partidoMaisInf[3] = ;
+    Sergipe-> partidoMaisInf = -1; //PSB
     Sergipe-> setorMaisImport = 3;
     Sergipe-> iGini = 0.47;
     Sergipe-> taxaHomi = 55.7;
     Sergipe-> porcIdosos = 0.118;
 
     // ---- 18 Acre ----
-    EstadosEleitores* Acre = new EstadosEleitores;
-
     Acre-> classeA = 0.003;
     Acre-> classeB = 0.0054;
     Acre-> classeC = 0.0678;
@@ -466,15 +494,13 @@ int main(){
     Acre-> rendaPerCapta = 769;
     Acre-> ensinoSuperior = 0.0583;
     Acre-> analfabetismo = 0.131;
-    Acre-> partidoMaisInf[3] = ;
+    Acre-> partidoMaisInf = -1; //PT
     Acre-> setorMaisImport = 1;
     Acre-> iGini = 0.5;
     Acre-> taxaHomi = 63.9;
     Acre-> porcIdosos = 0.088;
 
     // ---- 19 Pernambuco ----
-    EstadosEleitores* Pernambuco = new EstadosEleitores;
-
     Pernambuco-> classeA = 0.0022;
     Pernambuco-> classeB = 0.0075;
     Pernambuco-> classeC = 0.0495;
@@ -484,15 +510,13 @@ int main(){
     Pernambuco-> rendaPerCapta = 852;
     Pernambuco-> ensinoSuperior = 0.0567;
     Pernambuco-> analfabetismo = 0.128;
-    Pernambuco-> partidoMaisInf[3] = ;
+    Pernambuco-> partidoMaisInf = -1; //PSB
     Pernambuco-> setorMaisImport = 3;
     Pernambuco-> iGini = 0.492;
     Pernambuco-> taxaHomi = 57.3;
     Pernambuco-> porcIdosos = 0.148;
 
     // ---- 20 Rio Grande do Norte ----
-    EstadosEleitores* RioGrandeDoNorte = new EstadosEleitores;
-
     RioGrandeDoNorte-> classeA = 0.0012;
     RioGrandeDoNorte-> classeB = 0.0074;
     RioGrandeDoNorte-> classeC = 0.067;
@@ -502,15 +526,13 @@ int main(){
     RioGrandeDoNorte-> rendaPerCapta = 845;
     RioGrandeDoNorte-> ensinoSuperior = 0.0589;
     RioGrandeDoNorte-> analfabetismo = 0.147;
-    RioGrandeDoNorte-> partidoMaisInf[3] = ;
+    RioGrandeDoNorte-> partidoMaisInf = 0; //PSD
     RioGrandeDoNorte-> setorMaisImport = 1;
     RioGrandeDoNorte-> iGini = 0.487;
     RioGrandeDoNorte-> taxaHomi = 68;
     RioGrandeDoNorte-> porcIdosos = 0.126;
     
     // ---- 21 Bahia ----
-    EstadosEleitores* Bahia = new EstadosEleitores;
-
     Bahia-> classeA = 0.0017;
     Bahia-> classeB = 0.0056;
     Bahia-> classeC = 0.0496;
@@ -520,15 +542,13 @@ int main(){
     Bahia-> rendaPerCapta = 862;
     Bahia-> ensinoSuperior = 0.0451;
     Bahia-> analfabetismo = 0.130;
-    Bahia-> partidoMaisInf[3] = ;
+    Bahia-> partidoMaisInf = 1; //DEM
     Bahia-> setorMaisImport = 1;
     Bahia-> iGini = 0.481;
     Bahia-> taxaHomi = 45.1;
     Bahia-> porcIdosos = 0.134;
 
     // ---- 22 Para ----
-    EstadosEleitores* Para = new EstadosEleitores;
-
     Para-> classeA = 0.0011;
     Para-> classeB = 0.0044;
     Para-> classeC = 0.049;
@@ -538,15 +558,13 @@ int main(){
     Para-> rendaPerCapta = 715;
     Para-> ensinoSuperior = 0.0406;
     Para-> analfabetismo = 0.093;
-    Para-> partidoMaisInf[3] = ;
+    Para-> partidoMaisInf = 1; //PSDB
     Para-> setorMaisImport = 1;
     Para-> iGini = 0.459;
     Para-> taxaHomi = 53.4;
     Para-> porcIdosos = 0.106;
 
     // ---- 23 Ceara ----
-    EstadosEleitores* Ceara = new EstadosEleitores;
-
     Ceara-> classeA = 0.0012;
     Ceara-> classeB = 0.047;
     Ceara-> classeC = 0.0403;
@@ -556,15 +574,13 @@ int main(){
     Ceara-> rendaPerCapta = 824;
     Ceara-> ensinoSuperior = 0.0496;
     Ceara-> analfabetismo = 0.152;
-    Ceara-> partidoMaisInf[3] = ;
+    Ceara-> partidoMaisInf = -1; //PDT
     Ceara-> setorMaisImport = 3;
     Ceara-> iGini = 0.453;
     Ceara-> taxaHomi = 59.1;
     Ceara-> porcIdosos = 0.149;
 
     // ---- 24 Paraiba ----
-    EstadosEleitores* Paraiba = new EstadosEleitores;
-
     Paraiba-> classeA = 0.0019;
     Paraiba-> classeB = 0.0089;
     Paraiba-> classeC = 0.0627;
@@ -574,15 +590,13 @@ int main(){
     Paraiba-> rendaPerCapta = 928;
     Paraiba-> ensinoSuperior = 0.0571;
     Paraiba-> analfabetismo = 0.163;
-    Paraiba-> partidoMaisInf[3] = ;
+    Paraiba-> partidoMaisInf = -1; //PSB
     Paraiba-> setorMaisImport = 3;
     Paraiba-> iGini = 0.51;
     Paraiba-> taxaHomi = 31.9;
     Paraiba-> porcIdosos = 0.135;
 
     // ---- 25 Alagoas ----
-    EstadosEleitores* Alagoas = new EstadosEleitores;
-
     Alagoas-> classeA = 0.0004;
     Alagoas-> classeB = 0.0031;
     Alagoas-> classeC = 0.0444;
@@ -592,15 +606,13 @@ int main(){
     Alagoas-> rendaPerCapta = 658;
     Alagoas-> ensinoSuperior = 0.0466;
     Alagoas-> analfabetismo = 0.194;
-    Alagoas-> partidoMaisInf[3] = ;
+    Alagoas-> partidoMaisInf = 0; //PMDB
     Alagoas-> setorMaisImport = 1;
     Alagoas-> iGini = 0.438;
     Alagoas-> taxaHomi = 56.9;
     Alagoas-> porcIdosos = 0.128;
 
     // ---- 26 Piaui ----
-    EstadosEleitores* Piaui = new EstadosEleitores;
-
     Piaui-> classeA = 0.0025;
     Piaui-> classeB = 0.0031;
     Piaui-> classeC = 0.0468;
@@ -610,15 +622,13 @@ int main(){
     Piaui-> rendaPerCapta = 715;
     Piaui-> ensinoSuperior = 0.0510;
     Piaui-> analfabetismo = 0.172;
-    Piaui-> partidoMaisInf[3] = ;
+    Piaui-> partidoMaisInf = 2; //PP
     Piaui-> setorMaisImport = 2;
     Piaui-> iGini = 0.505;
     Piaui-> taxaHomi = 20.2;
     Piaui-> porcIdosos = 0.121;
 
     // ---- 27 Maranhao ----
-    EstadosEleitores* Maranhao = new EstadosEleitores;
-
     Maranhao-> classeA = 0.002;
     Maranhao-> classeB = 0.059;
     Maranhao-> classeC = 0.0364;
@@ -628,14 +638,9 @@ int main(){
     Maranhao-> rendaPerCapta = 597;
     Maranhao-> ensinoSuperior = 0.0356;
     Maranhao-> analfabetismo = 0.167; 
-    Maranhao-> partidoMaisInf[3] = ;
+    Maranhao-> partidoMaisInf = -3;
     Maranhao-> setorMaisImport = 1;
     Maranhao-> iGini = 0.506;
     Maranhao-> taxaHomi = 29.4;
     Maranhao-> porcIdosos = 0.113;
-
-    return 0;
 }
-
-
-//Taxa de homicío Brail 30.8
