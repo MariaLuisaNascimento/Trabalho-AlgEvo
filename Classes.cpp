@@ -55,9 +55,22 @@ class EstadosEleitores{
     int partidoMaisInf;
     //vamos fazer 1- primário, 2- sec e 3 - ter
     int setorMaisImport;
-    double iGini;
+    double iGini; // indice para medir desigualdade social 
     double taxaHomi;
-    double porcIdosos;
+    double parcelaIdosos;
+
+    //Caracteristicas
+        //Carater politico e economico
+    double nivelAutoritario;
+    double nivelLibertario;
+
+    double nivelDireita;
+    double nivelCentro;
+    double nivelEsquerda;
+
+        //Carater social
+    double nivelDireitaSocial;
+    double nivelEsquerdaSocial;
 };
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------*/
@@ -109,7 +122,6 @@ int main(){
     ParametrosDaEvolucao(DistritoFederal,SaoPaulo,RioDeJaneiro,SantaCatarina,RioGrandeDoSul,Parana,MatoGrosso,MatoGrossoDoSul,EspiritoSanto,
 Goias,MinasGerais,Amazonas,Rondonia,Roraima,Tocantins,Amapa,Sergipe,Acre,Pernambuco,RioGrandeDoNorte,Bahia,Para,Ceara,Paraiba,Alagoas,Piaui,Maranhao);
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
-   
 /* ---------------------------------------------------- EVOLUIR O CANDIDATO ---------------------------------------------------------------------------*/   
     Candidato* candidatoTeste = new Candidato;
     Evolucao(candidatoTeste);
@@ -225,7 +237,56 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     DistritoFederal-> setorMaisImport = 3;
     DistritoFederal-> iGini = 0.555;
     DistritoFederal-> taxaHomi = 18.2;
-    DistritoFederal-> porcIdosos = 0.114;
+    DistritoFederal-> parcelaIdosos = 0.114;
+
+    //Caracteristicas
+        //Carater politico e economico
+    DistritoFederal-> nivelAutoritario = (DistritoFederal-> classeA + DistritoFederal-> classeC + DistritoFederal-> classesED + DistritoFederal-> religiosidade +
+                                        DistritoFederal-> analfabetismo + DistritoFederal-> iGini + DistritoFederal-> parcelaIdosos);
+    if(DistritoFederal-> setorMaisImport == 1)
+        DistritoFederal-> nivelAutoritario = (DistritoFederal-> nivelAutoritario + 1)/8;
+    else
+        DistritoFederal-> nivelAutoritario = DistritoFederal-> nivelAutoritario/7;
+    //-------------------------------------------------------------------------------------------------------------------------------
+    DistritoFederal-> nivelLibertario = (DistritoFederal-> classeB + DistritoFederal-> ensinoSuperior);
+    if(DistritoFederal-> setorMaisImport == 2 || DistritoFederal-> setorMaisImport == 3)
+        DistritoFederal-> nivelLibertario = (DistritoFederal-> nivelLibertario + 1)/3;
+    else
+        DistritoFederal-> nivelLibertario = DistritoFederal-> nivelLibertario/2;
+    //-------------------------------------------------------------------------------------------------------------------------------
+    DistritoFederal-> nivelDireita = (DistritoFederal-> classeA + DistritoFederal-> classeB + DistritoFederal-> religiosidade +  
+                                    DistritoFederal-> analfabetismo + DistritoFederal-> iGini + DistritoFederal-> parcelaIdosos);
+    if((DistritoFederal-> setorMaisImport == 1 || DistritoFederal-> setorMaisImport == 2) && (DistritoFederal-> partidoMaisInf == 1 || DistritoFederal-> partidoMaisInf == 2 || DistritoFederal-> partidoMaisInf == 3))
+         DistritoFederal-> nivelDireita = (DistritoFederal-> nivelDireita + 2)/8;
+    else if((DistritoFederal-> setorMaisImport != 1 || DistritoFederal-> setorMaisImport == 2) && (DistritoFederal-> partidoMaisInf == 1 || DistritoFederal-> partidoMaisInf == 2 || DistritoFederal-> partidoMaisInf == 3))
+         DistritoFederal-> nivelDireita = (DistritoFederal-> nivelDireita + 1)/7;
+    else
+        DistritoFederal-> nivelDireita = DistritoFederal-> nivelDireita/6;
+    //-------------------------------------------------------------------------------------------------------------------------------
+    DistritoFederal-> nivelCentro = (DistritoFederal-> classeC + DistritoFederal-> ensinoSuperior);
+    if(DistritoFederal-> setorMaisImport == 3 && DistritoFederal-> partidoMaisInf == 0)
+        DistritoFederal-> nivelCentro = (DistritoFederal-> nivelCentro + 2)/4;
+    else if(DistritoFederal-> setorMaisImport != 3 && DistritoFederal-> partidoMaisInf == 0)
+        DistritoFederal-> nivelCentro = (DistritoFederal-> nivelCentro + 1)/3;
+    else
+        DistritoFederal-> nivelCentro = DistritoFederal-> nivelCentro/2;
+    //-------------------------------------------------------------------------------------------------------------------------------
+    DistritoFederal-> nivelEsquerda = DistritoFederal-> classesED;
+    if(DistritoFederal-> partidoMaisInf == -1 || DistritoFederal-> partidoMaisInf == -2 || DistritoFederal-> partidoMaisInf == -3)
+        DistritoFederal-> nivelEsquerda = (DistritoFederal-> nivelEsquerda + 1)/2;
+    
+        //Carater Social
+    DistritoFederal-> nivelDireitaSocial = (DistritoFederal-> classeA + DistritoFederal-> classeB + DistritoFederal-> classeC + DistritoFederal-> classesED + 
+                                            DistritoFederal-> religiosidade + DistritoFederal-> iGini + DistritoFederal-> parcelaIdosos);
+    if(DistritoFederal-> setorMaisImport == 1)
+        DistritoFederal-> nivelDireitaSocial = (DistritoFederal-> nivelDireitaSocial + 1)/8;
+    else
+        DistritoFederal-> nivelDireitaSocial = DistritoFederal-> nivelDireitaSocial/7;
+    //-------------------------------------------------------------------------------------------------------------------------------
+    DistritoFederal-> nivelEsquerdaSocial = (DistritoFederal-> ensinoSuperior + DistritoFederal-> analfabetismo)/2;
+
+    printf("%lf   %lf   %lf   %lf   %lf   %lf   %lf \n",DistritoFederal-> nivelAutoritario, DistritoFederal-> nivelLibertario , DistritoFederal-> nivelDireita, DistritoFederal-> nivelCentro, DistritoFederal-> nivelEsquerda, DistritoFederal-> nivelDireitaSocial, DistritoFederal-> nivelEsquerdaSocial);
+    
 
     //---- 2 Sao Paulo ----
     SaoPaulo-> classeA = 0.0054;
@@ -241,7 +302,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     SaoPaulo-> setorMaisImport = 3;
     SaoPaulo-> iGini = 0.46;
     SaoPaulo-> taxaHomi = 10.7;
-    SaoPaulo-> porcIdosos = 0.153;
+    SaoPaulo-> parcelaIdosos = 0.153;
 
     //---- 3 Rio de Janeiro ----
     RioDeJaneiro-> classeA = 0.0072;
@@ -257,7 +318,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     RioDeJaneiro-> setorMaisImport = 3;
     RioDeJaneiro-> iGini = 0.503;
     RioDeJaneiro-> taxaHomi = 40.4;
-    RioDeJaneiro-> porcIdosos = 0.175;
+    RioDeJaneiro-> parcelaIdosos = 0.175;
 
     //---- 4 Santa Catarina -----
     SantaCatarina-> classeA = 0.0036;
@@ -273,7 +334,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     SantaCatarina-> setorMaisImport = 1;
     SantaCatarina-> iGini = 0.419;
     SantaCatarina-> taxaHomi = 16.5;
-    SantaCatarina-> porcIdosos = 0.152;
+    SantaCatarina-> parcelaIdosos = 0.152;
 
     // ---- 5 Rio Grande do Sul ----
     RioGrandeDoSul-> classeA = 0.005;
@@ -289,7 +350,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     RioGrandeDoSul-> setorMaisImport = 3;
     RioGrandeDoSul-> iGini = 0.454;
     RioGrandeDoSul-> taxaHomi = 26.7;
-    RioGrandeDoSul-> porcIdosos = 0.178;
+    RioGrandeDoSul-> parcelaIdosos = 0.178;
 
     // ---- 6 Parana ----
     Parana-> classeA = 0.0047;
@@ -305,7 +366,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Parana-> setorMaisImport = 1;
     Parana-> iGini = 0.465;
     Parana-> taxaHomi = 22.6;
-    Parana-> porcIdosos = 0.146;
+    Parana-> parcelaIdosos = 0.146;
 
     // ---- 7 Mato Grosso ----
     MatoGrosso-> classeA = 0.003;
@@ -321,7 +382,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     MatoGrosso-> setorMaisImport = 1;
     MatoGrosso-> iGini = 0.445;
     MatoGrosso-> taxaHomi = 31.5;
-    MatoGrosso-> porcIdosos = 0.114;
+    MatoGrosso-> parcelaIdosos = 0.114;
 
     // ---- 8 Mato Grosso do Sul ----
     MatoGrossoDoSul-> classeA = 0.0054;
@@ -337,7 +398,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     MatoGrossoDoSul-> setorMaisImport = 1;
     MatoGrossoDoSul-> iGini = 0.479;
     MatoGrossoDoSul-> taxaHomi = 20.8;
-    MatoGrossoDoSul-> porcIdosos = 0.133;
+    MatoGrossoDoSul-> parcelaIdosos = 0.133;
 
     // ---- 9 Espirito Santo ----
     EspiritoSanto-> classeA = 0.0021;
@@ -353,7 +414,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     EspiritoSanto-> setorMaisImport = 3;
     EspiritoSanto-> iGini = 0.471;
     EspiritoSanto-> taxaHomi = 37.4;
-    EspiritoSanto-> porcIdosos = 0.148;
+    EspiritoSanto-> parcelaIdosos = 0.148;
 
     // ---- 10 Goias ----
     Goias-> classeA = 0.0025;
@@ -369,7 +430,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Goias-> setorMaisImport = 3;
     Goias-> iGini = 0.436;
     Goias-> taxaHomi = 39.3;
-    Goias-> porcIdosos = 0.124;
+    Goias-> parcelaIdosos = 0.124;
 
     // ---- 11 Minas Gerais ----
     MinasGerais-> classeA = 0.0039;
@@ -385,7 +446,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     MinasGerais-> setorMaisImport = 1;
     MinasGerais-> iGini = 0.478;
     MinasGerais-> taxaHomi = 19.6;
-    MinasGerais-> porcIdosos = 0.151;
+    MinasGerais-> parcelaIdosos = 0.151;
 
     // ---- 12 Amazonas ----
     Amazonas-> classeA = 0.0012;
@@ -401,7 +462,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Amazonas-> setorMaisImport = 3;
     Amazonas-> iGini = 0.476;
     Amazonas-> taxaHomi = 31.3;
-    Amazonas-> porcIdosos = 0.088;
+    Amazonas-> parcelaIdosos = 0.088;
 
     // ---- 13 Rondonia ----
     Rondonia-> classeA = 0.0014;
@@ -417,7 +478,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Rondonia-> setorMaisImport = 1;
     Rondonia-> iGini = 0.452;
     Rondonia-> taxaHomi = 28.1;
-    Rondonia-> porcIdosos = 0.102;
+    Rondonia-> parcelaIdosos = 0.102;
 
     // ---- 14 Roraima ----
     Roraima-> classeA = 0.0029;
@@ -433,7 +494,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Roraima-> setorMaisImport = 1;
     Roraima-> iGini = 0.5;
     Roraima-> taxaHomi = 44;
-    Roraima-> porcIdosos = 0.08;
+    Roraima-> parcelaIdosos = 0.08;
 
     // ---- 15 Tocantins ----
     Tocantins-> classeA = 0.0033;
@@ -449,7 +510,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Tocantins-> setorMaisImport = 1;
     Tocantins-> iGini = 0.504;
     Tocantins-> taxaHomi = 26.6;
-    Tocantins-> porcIdosos = 0.13;
+    Tocantins-> parcelaIdosos = 0.13;
 
     // ---- 16 Amapa ----
     Amapa-> classeA = 0;
@@ -465,7 +526,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Amapa-> setorMaisImport = 1;
     Amapa-> iGini = 0.457;
     Amapa-> taxaHomi = 53.9;
-    Amapa-> porcIdosos = 0.08;
+    Amapa-> parcelaIdosos = 0.08;
 
 
     // ---- 17 Sergipe ----
@@ -482,7 +543,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Sergipe-> setorMaisImport = 3;
     Sergipe-> iGini = 0.47;
     Sergipe-> taxaHomi = 55.7;
-    Sergipe-> porcIdosos = 0.118;
+    Sergipe-> parcelaIdosos = 0.118;
 
     // ---- 18 Acre ----
     Acre-> classeA = 0.003;
@@ -498,7 +559,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Acre-> setorMaisImport = 1;
     Acre-> iGini = 0.5;
     Acre-> taxaHomi = 63.9;
-    Acre-> porcIdosos = 0.088;
+    Acre-> parcelaIdosos = 0.088;
 
     // ---- 19 Pernambuco ----
     Pernambuco-> classeA = 0.0022;
@@ -514,7 +575,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Pernambuco-> setorMaisImport = 3;
     Pernambuco-> iGini = 0.492;
     Pernambuco-> taxaHomi = 57.3;
-    Pernambuco-> porcIdosos = 0.148;
+    Pernambuco-> parcelaIdosos = 0.148;
 
     // ---- 20 Rio Grande do Norte ----
     RioGrandeDoNorte-> classeA = 0.0012;
@@ -530,7 +591,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     RioGrandeDoNorte-> setorMaisImport = 1;
     RioGrandeDoNorte-> iGini = 0.487;
     RioGrandeDoNorte-> taxaHomi = 68;
-    RioGrandeDoNorte-> porcIdosos = 0.126;
+    RioGrandeDoNorte-> parcelaIdosos = 0.126;
     
     // ---- 21 Bahia ----
     Bahia-> classeA = 0.0017;
@@ -546,7 +607,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Bahia-> setorMaisImport = 1;
     Bahia-> iGini = 0.481;
     Bahia-> taxaHomi = 45.1;
-    Bahia-> porcIdosos = 0.134;
+    Bahia-> parcelaIdosos = 0.134;
 
     // ---- 22 Para ----
     Para-> classeA = 0.0011;
@@ -562,7 +623,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Para-> setorMaisImport = 1;
     Para-> iGini = 0.459;
     Para-> taxaHomi = 53.4;
-    Para-> porcIdosos = 0.106;
+    Para-> parcelaIdosos = 0.106;
 
     // ---- 23 Ceara ----
     Ceara-> classeA = 0.0012;
@@ -578,7 +639,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Ceara-> setorMaisImport = 3;
     Ceara-> iGini = 0.453;
     Ceara-> taxaHomi = 59.1;
-    Ceara-> porcIdosos = 0.149;
+    Ceara-> parcelaIdosos = 0.149;
 
     // ---- 24 Paraiba ----
     Paraiba-> classeA = 0.0019;
@@ -594,7 +655,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Paraiba-> setorMaisImport = 3;
     Paraiba-> iGini = 0.51;
     Paraiba-> taxaHomi = 31.9;
-    Paraiba-> porcIdosos = 0.135;
+    Paraiba-> parcelaIdosos = 0.135;
 
     // ---- 25 Alagoas ----
     Alagoas-> classeA = 0.0004;
@@ -610,7 +671,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Alagoas-> setorMaisImport = 1;
     Alagoas-> iGini = 0.438;
     Alagoas-> taxaHomi = 56.9;
-    Alagoas-> porcIdosos = 0.128;
+    Alagoas-> parcelaIdosos = 0.128;
 
     // ---- 26 Piaui ----
     Piaui-> classeA = 0.0025;
@@ -626,7 +687,7 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Piaui-> setorMaisImport = 2;
     Piaui-> iGini = 0.505;
     Piaui-> taxaHomi = 20.2;
-    Piaui-> porcIdosos = 0.121;
+    Piaui-> parcelaIdosos = 0.121;
 
     // ---- 27 Maranhao ----
     Maranhao-> classeA = 0.002;
@@ -642,5 +703,5 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Maranhao-> setorMaisImport = 1;
     Maranhao-> iGini = 0.506;
     Maranhao-> taxaHomi = 29.4;
-    Maranhao-> porcIdosos = 0.113;
+    Maranhao-> parcelaIdosos = 0.113;
 }
