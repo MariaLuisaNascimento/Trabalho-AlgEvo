@@ -78,7 +78,8 @@ class EstadosEleitores{
 
 /* ------------------------------------------------- DECLARAR AS FUNCOES DA EVOLUCAO -----------------------------------------------------------*/
 
-void IniciaMundo (EstadosEleitores* DistritoFederal, EstadosEleitores* SaoPaulo, EstadosEleitores* RioDeJaneiro, EstadosEleitores* SantaCatarina,
+void IniciaMundo (double* AutoritarioIdeal, double* LibertarioIdeal, double* DireitaIdeal, double* CentroIdeal, double* EsquerdaIdeal, double* DireitaSocialIdeal,
+double* EsquerdaSocialIdeal, EstadosEleitores* DistritoFederal, EstadosEleitores* SaoPaulo, EstadosEleitores* RioDeJaneiro, EstadosEleitores* SantaCatarina,
 EstadosEleitores* RioGrandeDoSul, EstadosEleitores* Parana, EstadosEleitores* MatoGrosso, EstadosEleitores* MatoGrossoDoSul, EstadosEleitores* EspiritoSanto,
 EstadosEleitores* Goias, EstadosEleitores* MinasGerais, EstadosEleitores* Amazonas, EstadosEleitores* Rondonia, EstadosEleitores* Roraima, EstadosEleitores* Tocantins,
 EstadosEleitores* Amapa, EstadosEleitores* Sergipe, EstadosEleitores* Acre, EstadosEleitores* Pernambuco, EstadosEleitores* RioGrandeDoNorte, EstadosEleitores* Bahia,
@@ -119,14 +120,58 @@ int main(){
     EstadosEleitores* Piaui = new EstadosEleitores;                 //26
     EstadosEleitores* Maranhao = new EstadosEleitores;              //27
     
-    IniciaMundo(DistritoFederal,SaoPaulo,RioDeJaneiro,SantaCatarina,RioGrandeDoSul,Parana,MatoGrosso,MatoGrossoDoSul,EspiritoSanto,
-Goias,MinasGerais,Amazonas,Rondonia,Roraima,Tocantins,Amapa,Sergipe,Acre,Pernambuco,RioGrandeDoNorte,Bahia,Para,Ceara,Paraiba,Alagoas,Piaui,Maranhao);
+    double AutoritarioIdeal; 
+    double LibertarioIdeal;
+    double DireitaIdeal;
+    double CentroIdeal;
+    double EsquerdaIdeal;
+    double DireitaSocialIdeal;
+    double EsquerdaSocialIdeal;
+
+    IniciaMundo(&AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal,DistritoFederal,SaoPaulo,
+    RioDeJaneiro,SantaCatarina,RioGrandeDoSul,Parana,MatoGrosso,MatoGrossoDoSul,EspiritoSanto,Goias,MinasGerais,Amazonas,Rondonia,Roraima,Tocantins,Amapa,
+    Sergipe,Acre,Pernambuco,RioGrandeDoNorte,Bahia,Para,Ceara,Paraiba,Alagoas,Piaui,Maranhao);
+   
+    printf(" O nível ideal de autoritarismo de um candidato é: %lf \n",AutoritarioIdeal);
+    printf(" O nível ideal de liberalismo de um candidato é: %lf \n",LibertarioIdeal);
+    printf(" O nível ideal de direita de um candidato é: %lf \n",DireitaIdeal);
+    printf(" O nível ideal de centro de um candidato é: %lf \n",CentroIdeal);
+    printf(" O nível ideal de esquerda de um candidato é: %lf \n",EsquerdaIdeal);
+    printf(" O nível ideal de direitaSocial de um candidato é: %lf \n",DireitaSocialIdeal);
+    printf(" O nível ideal de esquerdaSocial de um candidato é: %lf \n",EsquerdaSocialIdeal);
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* ---------------------------------------------------- EVOLUIR O CANDIDATO ---------------------------------------------------------------------------*/   
     Candidato* candidatoTeste = new Candidato;
     IniciaPopulacao(candidatoTeste);
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
+    delete DistritoFederal;       //1
+    delete SaoPaulo;              //2
+    delete RioDeJaneiro;          //3
+    delete SantaCatarina;         //4
+    delete RioGrandeDoSul;        //5
+    delete Parana;                //6
+    delete MatoGrosso;            //7
+    delete MatoGrossoDoSul;       //8
+    delete EspiritoSanto;         //9
+    delete Goias;                 //10
+    delete MinasGerais;           //11
+    delete Amazonas;              //12
+    delete Rondonia;              //13
+    delete Roraima;               //14
+    delete Tocantins;             //15
+    delete Amapa;                 //16
+    delete Sergipe;               //17
+    delete Acre;                  //18
+    delete Pernambuco;            //19
+    delete RioGrandeDoNorte;      //20
+    delete Bahia;                 //21
+    delete Para;                  //22
+    delete Ceara;                 //23
+    delete Paraiba;               //24
+    delete Alagoas;               //25
+    delete Piaui;                 //26
+    delete Maranhao;  
     return 0;
 }
 
@@ -216,15 +261,14 @@ void IniciaPopulacao(Candidato* candidatoTeste){
     else 
         printf("O candidato tem um viés social de esquerda\n");
 }
-
-
+ 
 /*-------------------------------------------------DEFINIR OS VALORES DOS CAMPOS DE CADA ESTADO--------------------------------------------------------------------*/
-void IniciaMundo (EstadosEleitores* DistritoFederal, EstadosEleitores* SaoPaulo, EstadosEleitores* RioDeJaneiro, EstadosEleitores* SantaCatarina,
+void IniciaMundo (double* AutoritarioIdeal, double* LibertarioIdeal, double* DireitaIdeal, double* CentroIdeal, double* EsquerdaIdeal, double* DireitaSocialIdeal,
+double* EsquerdaSocialIdeal, EstadosEleitores* DistritoFederal, EstadosEleitores* SaoPaulo, EstadosEleitores* RioDeJaneiro, EstadosEleitores* SantaCatarina,
 EstadosEleitores* RioGrandeDoSul, EstadosEleitores* Parana, EstadosEleitores* MatoGrosso, EstadosEleitores* MatoGrossoDoSul, EstadosEleitores* EspiritoSanto,
 EstadosEleitores* Goias, EstadosEleitores* MinasGerais, EstadosEleitores* Amazonas, EstadosEleitores* Rondonia, EstadosEleitores* Roraima, EstadosEleitores* Tocantins,
 EstadosEleitores* Amapa, EstadosEleitores* Sergipe, EstadosEleitores* Acre, EstadosEleitores* Pernambuco, EstadosEleitores* RioGrandeDoNorte, EstadosEleitores* Bahia,
 EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, EstadosEleitores* Alagoas, EstadosEleitores* Piaui, EstadosEleitores* Maranhao){
- 
     //---- 1 Distrito Federal ----
     DistritoFederal-> classeA = 0.0228;
     DistritoFederal-> classeB = 0.0252;
@@ -1926,4 +1970,106 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     //-------------------------------------------------------------------------------------------------------------------------------
    Maranhao-> nivelEsquerdaSocial = (Maranhao-> ensinoSuperior +Maranhao-> analfabetismo)/2;
 
-}
+
+   *AutoritarioIdeal = ((DistritoFederal-> nivelAutoritario * DistritoFederal-> popVotante) + (SaoPaulo-> nivelAutoritario * SaoPaulo-> popVotante) + 
+                        (RioDeJaneiro-> nivelAutoritario * RioDeJaneiro-> popVotante) + (SantaCatarina-> nivelAutoritario * SantaCatarina-> popVotante) +
+                        (RioGrandeDoSul-> nivelAutoritario * RioGrandeDoSul-> popVotante) + (Parana-> nivelAutoritario * Parana-> popVotante) + 
+                        (MatoGrosso-> nivelAutoritario * MatoGrosso-> popVotante) + (MatoGrossoDoSul-> nivelAutoritario * MatoGrossoDoSul-> popVotante) +
+                        (EspiritoSanto-> nivelAutoritario * EspiritoSanto-> popVotante) + (Goias-> nivelAutoritario * Goias-> popVotante) + 
+                        (MinasGerais-> nivelAutoritario * MinasGerais-> popVotante) + (Amazonas-> nivelAutoritario * Amazonas-> popVotante) + 
+                        (Rondonia-> nivelAutoritario * Rondonia-> popVotante) + (Roraima-> nivelAutoritario * Roraima-> popVotante) + 
+                        (Tocantins-> nivelAutoritario * Tocantins-> popVotante) + (Amapa-> nivelAutoritario * Amapa-> popVotante) +  (Acre-> nivelAutoritario * Acre-> popVotante) +
+                        (Sergipe-> nivelAutoritario * Sergipe-> popVotante) + (Pernambuco-> nivelAutoritario * Pernambuco-> popVotante) +
+                        (RioGrandeDoNorte-> nivelAutoritario * RioGrandeDoNorte-> popVotante) +  (Bahia-> nivelAutoritario * Bahia-> popVotante) +
+                        (Para-> nivelAutoritario * Para-> popVotante) +  (Ceara-> nivelAutoritario * Ceara-> popVotante) +  (Paraiba-> nivelAutoritario * Paraiba-> popVotante) +
+                        (Alagoas-> nivelAutoritario * Alagoas-> popVotante) +  (Piaui-> nivelAutoritario * Piaui-> popVotante) +  (Maranhao-> nivelAutoritario * Maranhao-> popVotante))/27;
+
+    *LibertarioIdeal = ((DistritoFederal-> nivelLibertario * DistritoFederal-> popVotante) + (SaoPaulo-> nivelLibertario * SaoPaulo-> popVotante) + 
+                        (RioDeJaneiro-> nivelLibertario * RioDeJaneiro-> popVotante) + (SantaCatarina-> nivelLibertario * SantaCatarina-> popVotante) +
+                        (RioGrandeDoSul-> nivelLibertario * RioGrandeDoSul-> popVotante) + (Parana-> nivelLibertario * Parana-> popVotante) + 
+                        (MatoGrosso-> nivelLibertario * MatoGrosso-> popVotante) + (MatoGrossoDoSul-> nivelLibertario * MatoGrossoDoSul-> popVotante) +
+                        (EspiritoSanto-> nivelLibertario * EspiritoSanto-> popVotante) + (Goias-> nivelLibertario * Goias-> popVotante) + 
+                        (MinasGerais-> nivelLibertario * MinasGerais-> popVotante) + (Amazonas-> nivelLibertario * Amazonas-> popVotante) + 
+                        (Rondonia-> nivelLibertario * Rondonia-> popVotante) + (Roraima-> nivelLibertario * Roraima-> popVotante) + 
+                        (Tocantins-> nivelLibertario * Tocantins-> popVotante) + (Amapa-> nivelLibertario * Amapa-> popVotante) +  (Acre-> nivelLibertario * Acre-> popVotante) +
+                        (Sergipe-> nivelLibertario * Sergipe-> popVotante) + (Pernambuco-> nivelLibertario * Pernambuco-> popVotante) +
+                        (RioGrandeDoNorte-> nivelLibertario * RioGrandeDoNorte-> popVotante) +  (Bahia-> nivelLibertario * Bahia-> popVotante) +
+                        (Para-> nivelLibertario * Para-> popVotante) +  (Ceara-> nivelLibertario * Ceara-> popVotante) +  (Paraiba-> nivelLibertario * Paraiba-> popVotante) +
+                        (Alagoas-> nivelLibertario * Alagoas-> popVotante) +  (Piaui-> nivelLibertario * Piaui-> popVotante) +  (Maranhao-> nivelLibertario * Maranhao-> popVotante))/27;
+    
+    *DireitaIdeal = ((DistritoFederal-> nivelDireita * DistritoFederal-> popVotante) + (SaoPaulo-> nivelDireita * SaoPaulo-> popVotante) + 
+                        (RioDeJaneiro-> nivelDireita * RioDeJaneiro-> popVotante) + (SantaCatarina-> nivelDireita * SantaCatarina-> popVotante) +
+                        (RioGrandeDoSul-> nivelDireita * RioGrandeDoSul-> popVotante) + (Parana-> nivelDireita * Parana-> popVotante) + 
+                        (MatoGrosso-> nivelDireita * MatoGrosso-> popVotante) + (MatoGrossoDoSul-> nivelDireita * MatoGrossoDoSul-> popVotante) +
+                        (EspiritoSanto-> nivelDireita * EspiritoSanto-> popVotante) + (Goias-> nivelDireita * Goias-> popVotante) + 
+                        (MinasGerais-> nivelDireita * MinasGerais-> popVotante) + (Amazonas-> nivelDireita * Amazonas-> popVotante) + 
+                        (Rondonia-> nivelDireita * Rondonia-> popVotante) + (Roraima-> nivelDireita * Roraima-> popVotante) + 
+                        (Tocantins-> nivelDireita * Tocantins-> popVotante) + (Amapa-> nivelDireita * Amapa-> popVotante) +  (Acre-> nivelDireita * Acre-> popVotante) +
+                        (Sergipe-> nivelDireita * Sergipe-> popVotante) + (Pernambuco-> nivelDireita * Pernambuco-> popVotante) +
+                        (RioGrandeDoNorte-> nivelDireita * RioGrandeDoNorte-> popVotante) +  (Bahia-> nivelDireita * Bahia-> popVotante) +
+                        (Para-> nivelDireita * Para-> popVotante) +  (Ceara-> nivelDireita * Ceara-> popVotante) +  (Paraiba-> nivelDireita * Paraiba-> popVotante) +
+                        (Alagoas-> nivelDireita * Alagoas-> popVotante) +  (Piaui-> nivelDireita * Piaui-> popVotante) +  (Maranhao-> nivelDireita * Maranhao-> popVotante))/27;
+       
+   *CentroIdeal = ((DistritoFederal-> nivelCentro * DistritoFederal-> popVotante) + (SaoPaulo-> nivelCentro * SaoPaulo-> popVotante) + 
+                        (RioDeJaneiro-> nivelCentro * RioDeJaneiro-> popVotante) + (SantaCatarina-> nivelCentro * SantaCatarina-> popVotante) +
+                        (RioGrandeDoSul-> nivelCentro * RioGrandeDoSul-> popVotante) + (Parana-> nivelCentro * Parana-> popVotante) + 
+                        (MatoGrosso-> nivelCentro * MatoGrosso-> popVotante) + (MatoGrossoDoSul-> nivelCentro * MatoGrossoDoSul-> popVotante) +
+                        (EspiritoSanto-> nivelCentro * EspiritoSanto-> popVotante) + (Goias-> nivelCentro * Goias-> popVotante) + 
+                        (MinasGerais-> nivelCentro * MinasGerais-> popVotante) + (Amazonas-> nivelCentro * Amazonas-> popVotante) + 
+                        (Rondonia-> nivelCentro * Rondonia-> popVotante) + (Roraima-> nivelCentro * Roraima-> popVotante) + 
+                        (Tocantins-> nivelCentro * Tocantins-> popVotante) + (Amapa-> nivelCentro * Amapa-> popVotante) +  (Acre-> nivelCentro * Acre-> popVotante) +
+                        (Sergipe-> nivelCentro * Sergipe-> popVotante) + (Pernambuco-> nivelCentro * Pernambuco-> popVotante) +
+                        (RioGrandeDoNorte-> nivelCentro * RioGrandeDoNorte-> popVotante) +  (Bahia-> nivelCentro * Bahia-> popVotante) +
+                        (Para-> nivelCentro * Para-> popVotante) +  (Ceara-> nivelCentro * Ceara-> popVotante) +  (Paraiba-> nivelCentro * Paraiba-> popVotante) +
+                        (Alagoas-> nivelCentro * Alagoas-> popVotante) +  (Piaui-> nivelCentro * Piaui-> popVotante) +  (Maranhao-> nivelCentro * Maranhao-> popVotante))/27;
+    
+    *EsquerdaIdeal = ((DistritoFederal-> nivelEsquerda * DistritoFederal-> popVotante) + (SaoPaulo-> nivelEsquerda * SaoPaulo-> popVotante) + 
+                        (RioDeJaneiro-> nivelEsquerda * RioDeJaneiro-> popVotante) + (SantaCatarina-> nivelEsquerda * SantaCatarina-> popVotante) +
+                        (RioGrandeDoSul-> nivelEsquerda * RioGrandeDoSul-> popVotante) + (Parana-> nivelEsquerda * Parana-> popVotante) + 
+                        (MatoGrosso-> nivelEsquerda * MatoGrosso-> popVotante) + (MatoGrossoDoSul-> nivelEsquerda * MatoGrossoDoSul-> popVotante) +
+                        (EspiritoSanto-> nivelEsquerda * EspiritoSanto-> popVotante) + (Goias-> nivelEsquerda * Goias-> popVotante) + 
+                        (MinasGerais-> nivelEsquerda * MinasGerais-> popVotante) + (Amazonas-> nivelEsquerda * Amazonas-> popVotante) + 
+                        (Rondonia-> nivelEsquerda * Rondonia-> popVotante) + (Roraima-> nivelEsquerda * Roraima-> popVotante) + 
+                        (Tocantins-> nivelEsquerda * Tocantins-> popVotante) + (Amapa-> nivelEsquerda * Amapa-> popVotante) +  (Acre-> nivelEsquerda * Acre-> popVotante) +
+                        (Sergipe-> nivelEsquerda * Sergipe-> popVotante) + (Pernambuco-> nivelEsquerda * Pernambuco-> popVotante) +
+                        (RioGrandeDoNorte-> nivelEsquerda * RioGrandeDoNorte-> popVotante) +  (Bahia-> nivelEsquerda * Bahia-> popVotante) +
+                        (Para-> nivelEsquerda * Para-> popVotante) +  (Ceara-> nivelEsquerda * Ceara-> popVotante) +  (Paraiba-> nivelEsquerda * Paraiba-> popVotante) +
+                        (Alagoas-> nivelEsquerda * Alagoas-> popVotante) +  (Piaui-> nivelEsquerda * Piaui-> popVotante) +  (Maranhao-> nivelEsquerda * Maranhao-> popVotante))/27;
+    
+    *DireitaSocialIdeal = ((DistritoFederal-> nivelDireitaSocial * DistritoFederal-> popVotante) + (SaoPaulo-> nivelDireitaSocial * SaoPaulo-> popVotante) + 
+                        (RioDeJaneiro-> nivelDireitaSocial * RioDeJaneiro-> popVotante) + (SantaCatarina-> nivelDireitaSocial * SantaCatarina-> popVotante) +
+                        (RioGrandeDoSul-> nivelDireitaSocial * RioGrandeDoSul-> popVotante) + (Parana-> nivelDireitaSocial * Parana-> popVotante) + 
+                        (MatoGrosso-> nivelDireitaSocial * MatoGrosso-> popVotante) + (MatoGrossoDoSul-> nivelDireitaSocial * MatoGrossoDoSul-> popVotante) +
+                        (EspiritoSanto-> nivelDireitaSocial * EspiritoSanto-> popVotante) + (Goias-> nivelDireitaSocial * Goias-> popVotante) + 
+                        (MinasGerais-> nivelDireitaSocial * MinasGerais-> popVotante) + (Amazonas-> nivelDireitaSocial * Amazonas-> popVotante) + 
+                        (Rondonia-> nivelDireitaSocial * Rondonia-> popVotante) + (Roraima-> nivelDireitaSocial * Roraima-> popVotante) + 
+                        (Tocantins-> nivelDireitaSocial * Tocantins-> popVotante) + (Amapa-> nivelDireitaSocial * Amapa-> popVotante) +  (Acre-> nivelDireitaSocial * Acre-> popVotante) +
+                        (Sergipe-> nivelDireitaSocial * Sergipe-> popVotante) + (Pernambuco-> nivelDireitaSocial * Pernambuco-> popVotante) +
+                        (RioGrandeDoNorte-> nivelDireitaSocial * RioGrandeDoNorte-> popVotante) +  (Bahia-> nivelDireitaSocial * Bahia-> popVotante) +
+                        (Para-> nivelDireitaSocial * Para-> popVotante) +  (Ceara-> nivelDireitaSocial * Ceara-> popVotante) +  (Paraiba-> nivelDireitaSocial * Paraiba-> popVotante) +
+                        (Alagoas-> nivelDireitaSocial * Alagoas-> popVotante) +  (Piaui-> nivelDireitaSocial * Piaui-> popVotante) +  (Maranhao-> nivelDireitaSocial * Maranhao-> popVotante))/27;
+    
+    *EsquerdaSocialIdeal = ((DistritoFederal-> nivelEsquerdaSocial * DistritoFederal-> popVotante) + (SaoPaulo-> nivelEsquerdaSocial * SaoPaulo-> popVotante) + 
+                        (RioDeJaneiro-> nivelEsquerdaSocial * RioDeJaneiro-> popVotante) + (SantaCatarina-> nivelEsquerdaSocial * SantaCatarina-> popVotante) +
+                        (RioGrandeDoSul-> nivelEsquerdaSocial * RioGrandeDoSul-> popVotante) + (Parana-> nivelEsquerdaSocial * Parana-> popVotante) + 
+                        (MatoGrosso-> nivelEsquerdaSocial * MatoGrosso-> popVotante) + (MatoGrossoDoSul-> nivelEsquerdaSocial * MatoGrossoDoSul-> popVotante) +
+                        (EspiritoSanto-> nivelEsquerdaSocial * EspiritoSanto-> popVotante) + (Goias-> nivelEsquerdaSocial * Goias-> popVotante) + 
+                        (MinasGerais-> nivelEsquerdaSocial * MinasGerais-> popVotante) + (Amazonas-> nivelEsquerdaSocial * Amazonas-> popVotante) + 
+                        (Rondonia-> nivelEsquerdaSocial * Rondonia-> popVotante) + (Roraima-> nivelEsquerdaSocial * Roraima-> popVotante) + 
+                        (Tocantins-> nivelEsquerdaSocial * Tocantins-> popVotante) + (Amapa-> nivelEsquerdaSocial * Amapa-> popVotante) +  (Acre-> nivelEsquerdaSocial * Acre-> popVotante) +
+                        (Sergipe-> nivelEsquerdaSocial * Sergipe-> popVotante) + (Pernambuco-> nivelEsquerdaSocial * Pernambuco-> popVotante) +
+                        (RioGrandeDoNorte-> nivelEsquerdaSocial * RioGrandeDoNorte-> popVotante) +  (Bahia-> nivelEsquerdaSocial * Bahia-> popVotante) +
+                        (Para-> nivelEsquerdaSocial * Para-> popVotante) +  (Ceara-> nivelEsquerdaSocial * Ceara-> popVotante) +  (Paraiba-> nivelEsquerdaSocial * Paraiba-> popVotante) +
+                        (Alagoas-> nivelEsquerdaSocial * Alagoas-> popVotante) +  (Piaui-> nivelEsquerdaSocial * Piaui-> popVotante) +  (Maranhao-> nivelEsquerdaSocial * Maranhao-> popVotante))/27;
+        
+    //Multiplicar os valores por 10
+    *AutoritarioIdeal = 10 * (*AutoritarioIdeal);
+    *LibertarioIdeal = 10 * (*LibertarioIdeal);
+
+    *DireitaIdeal = 10 * (*DireitaIdeal);
+    *CentroIdeal = 10 * (*CentroIdeal);
+    *EsquerdaIdeal = 10 * (*EsquerdaIdeal);
+
+    *DireitaSocialIdeal = 10 * (*DireitaSocialIdeal);
+    *EsquerdaSocialIdeal = 10 * (*EsquerdaSocialIdeal);
+    }
