@@ -287,8 +287,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     //-------------------------------------------------------------------------------------------------------------------------------
     DistritoFederal-> nivelEsquerdaSocial = (DistritoFederal-> ensinoSuperior + DistritoFederal-> analfabetismo)/2;
 
-    
-    
 
     //---- 2 Sao Paulo ----
     SaoPaulo-> classeA = 0.0054;
@@ -351,8 +349,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         SaoPaulo-> nivelDireitaSocial = SaoPaulo-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     SaoPaulo-> nivelEsquerdaSocial = (SaoPaulo-> ensinoSuperior + SaoPaulo-> analfabetismo)/2;
-
-
 
 
     //---- 3 Rio de Janeiro ----
@@ -418,8 +414,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     RioDeJaneiro-> nivelEsquerdaSocial = (RioDeJaneiro-> ensinoSuperior + RioDeJaneiro-> analfabetismo)/2;
 
 
-
-
     //---- 4 Santa Catarina -----
     SantaCatarina-> classeA = 0.0036;
     SantaCatarina-> classeB = 0.0158;
@@ -481,8 +475,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         SantaCatarina-> nivelDireitaSocial = SantaCatarina-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     SantaCatarina-> nivelEsquerdaSocial = (SantaCatarina-> ensinoSuperior + SantaCatarina-> analfabetismo)/2;
-
-
 
 
     // ---- 5 Rio Grande do Sul ----
@@ -548,8 +540,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     RioGrandeDoSul-> nivelEsquerdaSocial = (RioGrandeDoSul-> ensinoSuperior + RioGrandeDoSul-> analfabetismo)/2;
 
 
-
-
     // ---- 6 Parana ----
     Parana-> classeA = 0.0047;
     Parana-> classeB = 0.0169;
@@ -611,8 +601,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         Parana-> nivelDireitaSocial = Parana-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     Parana-> nivelEsquerdaSocial = (Parana-> ensinoSuperior + Parana-> analfabetismo)/2;
-
-
 
 
     // ---- 7 Mato Grosso ----
@@ -678,8 +666,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     MatoGrosso-> nivelEsquerdaSocial = (MatoGrosso-> ensinoSuperior + MatoGrosso-> analfabetismo)/2;
 
 
-
-
     // ---- 8 Mato Grosso do Sul ----
     MatoGrossoDoSul-> classeA = 0.0054;
     MatoGrossoDoSul-> classeB = 0.0168;
@@ -741,8 +727,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         MatoGrossoDoSul-> nivelDireitaSocial = MatoGrossoDoSul-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     MatoGrossoDoSul-> nivelEsquerdaSocial = (MatoGrossoDoSul-> ensinoSuperior + MatoGrossoDoSul-> analfabetismo)/2;
-
-
 
 
     // ---- 9 Espirito Santo ----
@@ -808,8 +792,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     EspiritoSanto-> nivelEsquerdaSocial = (EspiritoSanto-> ensinoSuperior + EspiritoSanto-> analfabetismo)/2;
 
 
-
-
     // ---- 10 Goias ----
     Goias-> classeA = 0.0025;
     Goias-> classeB = 0.0099;
@@ -871,8 +853,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         Goias-> nivelDireitaSocial = Goias-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     Goias-> nivelEsquerdaSocial = (Goias-> ensinoSuperior + Goias-> analfabetismo)/2;
-
-
 
 
     // ---- 11 Minas Gerais ----
@@ -938,8 +918,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     MinasGerais-> nivelEsquerdaSocial = (MinasGerais-> ensinoSuperior + MinasGerais-> analfabetismo)/2;
 
 
-
-
     // ---- 12 Amazonas ----
     Amazonas-> classeA = 0.0012;
     Amazonas-> classeB = 0.0078;
@@ -1001,8 +979,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         Amazonas-> nivelDireitaSocial = Amazonas-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     Amazonas-> nivelEsquerdaSocial = (Amazonas-> ensinoSuperior + Amazonas-> analfabetismo)/2;
-
-
 
 
     // ---- 13 Rondonia ----
@@ -1068,8 +1044,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Rondonia-> nivelEsquerdaSocial = (Rondonia-> ensinoSuperior + Rondonia-> analfabetismo)/2;
 
 
-
-
     // ---- 14 Roraima ----
     Roraima-> classeA = 0.0029;
     Roraima-> classeB = 0.0128;
@@ -1131,7 +1105,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         Roraima-> nivelDireitaSocial = Roraima-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     Roraima-> nivelEsquerdaSocial = (Roraima-> ensinoSuperior + Roraima-> analfabetismo)/2;
-
 
 
     // ---- 15 Tocantins ----
@@ -1197,8 +1170,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Tocantins-> nivelEsquerdaSocial = (Tocantins-> ensinoSuperior + Tocantins-> analfabetismo)/2;
 
 
-
-
     // ---- 16 Amapa ----
     Amapa-> classeA = 0;
     Amapa-> classeB = 0.0076;
@@ -1260,8 +1231,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         Amapa-> nivelDireitaSocial = Amapa-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     Amapa-> nivelEsquerdaSocial = (Amapa-> ensinoSuperior + Amapa-> analfabetismo)/2;
-
-
 
 
     // ---- 17 Sergipe ----
@@ -1327,8 +1296,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Sergipe-> nivelEsquerdaSocial = (Sergipe-> ensinoSuperior + Sergipe-> analfabetismo)/2;
 
 
-
-
     // ---- 18 Acre ----
     Acre-> classeA = 0.003;
     Acre-> classeB = 0.0054;
@@ -1390,8 +1357,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
         Acre-> nivelDireitaSocial = Acre-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
     Acre-> nivelEsquerdaSocial = (Acre-> ensinoSuperior + Acre-> analfabetismo)/2;
-
-
 
 
     // ---- 19 Pernambuco ----
@@ -1457,8 +1422,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     Pernambuco-> nivelEsquerdaSocial = (Pernambuco-> ensinoSuperior + Pernambuco-> analfabetismo)/2;
 
 
-
-
     // ---- 20 Rio Grande do Norte ----
     RioGrandeDoNorte-> classeA = 0.0012;
     RioGrandeDoNorte-> classeB = 0.0074;
@@ -1522,8 +1485,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
     RioGrandeDoNorte-> nivelEsquerdaSocial = (RioGrandeDoNorte-> ensinoSuperior + RioGrandeDoNorte-> analfabetismo)/2;
 
 
-
-
     // ---- 21 Bahia ----
     Bahia-> classeA = 0.0017;
     Bahia-> classeB = 0.0056;
@@ -1585,9 +1546,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
        Bahia-> nivelDireitaSocial =Bahia-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
    Bahia-> nivelEsquerdaSocial = (Bahia-> ensinoSuperior +Bahia-> analfabetismo)/2;
-
-
-
 
 
     // ---- 22 Para ----
@@ -1654,9 +1612,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
    Para-> nivelEsquerdaSocial = (Para-> ensinoSuperior +Para-> analfabetismo)/2;
 
 
-
-
-
     // ---- 23 Ceara ----
     Ceara-> classeA = 0.0012;
     Ceara-> classeB = 0.047;
@@ -1718,10 +1673,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
        Ceara-> nivelDireitaSocial =Ceara-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
    Ceara-> nivelEsquerdaSocial = (Ceara-> ensinoSuperior +Ceara-> analfabetismo)/2;
-
-
-
-
 
 
     // ---- 24 Paraiba ----
@@ -1787,9 +1738,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
    Paraiba-> nivelEsquerdaSocial = (Paraiba-> ensinoSuperior +Paraiba-> analfabetismo)/2;
 
 
-
-
-
     // ---- 25 Alagoas ----
     Alagoas-> classeA = 0.0004;
     Alagoas-> classeB = 0.0031;
@@ -1853,9 +1801,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
    Alagoas-> nivelEsquerdaSocial = (Alagoas-> ensinoSuperior +Alagoas-> analfabetismo)/2;
 
 
-
-
-
     // ---- 26 Piaui ----
     Piaui-> classeA = 0.0025;
     Piaui-> classeB = 0.0031;
@@ -1917,9 +1862,6 @@ EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, Esta
        Piaui-> nivelDireitaSocial =Piaui-> nivelDireitaSocial/7;
     //-------------------------------------------------------------------------------------------------------------------------------
    Piaui-> nivelEsquerdaSocial = (Piaui-> ensinoSuperior +Piaui-> analfabetismo)/2;
-
-
-
 
 
     // ---- 27 Maranhao ----
