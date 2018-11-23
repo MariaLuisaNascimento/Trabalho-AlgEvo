@@ -4,9 +4,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define geracoes 100
 using namespace std;
-
-
 
 /* ---------------------------------------------------- DECLARAR AS CLASSES ----------------------------------------------------------------------------*/
 class Candidato{ 
@@ -97,6 +96,10 @@ int SelecionaPopulacao(double* SelecaoNatural);
 
 void CruzamentoPopulacao(double* MelhorDNA, double* DNA1, double* DNA2, double* DNA3, double* DNA4, double* DNA5);
 
+void MutacaoDNA(double* DNA);
+
+void FimDaEvolucao(Candidato* candidatoIdeal, double* DNAevoluido);
+
 /* ------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
@@ -154,13 +157,10 @@ int main(){
 /* ---------------------------------------------------- EVOLUIR O CANDIDATO ---------------------------------------------------------------------------*/   
     
     Candidato* candidatoTeste = new Candidato;
+    Candidato* candidatoIdeal = new Candidato;
     double gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13;
-    /*double *DNA1, *DNA2, *DNA3, *DNA4, *DNA5;
-    DNA1 = (double*) malloc(13 * sizeof(double));
-    DNA2 = (double*) malloc(13 * sizeof(double));
-    DNA3 = (double*) malloc(13 * sizeof(double));
-    DNA4 = (double*) malloc(13 * sizeof(double));
-    DNA5 = (double*) malloc(13 * sizeof(double));*/
+    double* DNAevoluido;
+    DNAevoluido = (double*) malloc(13 * sizeof(double));
 
     IniciaPopulacao(&gene1, &gene2, &gene3, &gene4, &gene5, &gene6, &gene7, &gene8, &gene9, &gene10, &gene11, &gene12, &gene13);
     double DNA1[13] = {gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13};
@@ -181,33 +181,51 @@ int main(){
     double *SelecaoNatural = (double*) malloc(5 * sizeof(double));
     double pontuacao;
     
-    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA1, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
-    SelecaoNatural[0] = pontuacao;
+    for(int aux = 0; aux < geracoes; aux ++){
+        AvaliaPopulacao(&pontuacao, candidatoTeste, DNA1, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+        SelecaoNatural[0] = pontuacao;
 
-    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA2, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
-    SelecaoNatural[1] = pontuacao;
+        AvaliaPopulacao(&pontuacao, candidatoTeste, DNA2, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+        SelecaoNatural[1] = pontuacao;
 
-    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA3, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
-    SelecaoNatural[2] = pontuacao;
+        AvaliaPopulacao(&pontuacao, candidatoTeste, DNA3, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+        SelecaoNatural[2] = pontuacao;
 
-    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA4, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
-    SelecaoNatural[3] = pontuacao;
+        AvaliaPopulacao(&pontuacao, candidatoTeste, DNA4, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+        SelecaoNatural[3] = pontuacao;
 
-    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA5, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
-    SelecaoNatural[4] = pontuacao;
+        AvaliaPopulacao(&pontuacao, candidatoTeste, DNA5, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+        SelecaoNatural[4] = pontuacao;
 
-    int MelhorDNA = SelecionaPopulacao(SelecaoNatural) + 1;
-    if(MelhorDNA == 1)
-        CruzamentoPopulacao(DNA1, DNA1, DNA2, DNA3, DNA4, DNA5);
-    if(MelhorDNA == 2)
-        CruzamentoPopulacao(DNA2, DNA1, DNA2, DNA3, DNA4, DNA5);
-    if(MelhorDNA == 3)
-        CruzamentoPopulacao(DNA3, DNA1, DNA2, DNA3, DNA4, DNA5);
-    if(MelhorDNA == 4)
-        CruzamentoPopulacao(DNA4, DNA1, DNA2, DNA3, DNA4, DNA5);
-    if(MelhorDNA == 5)
-        CruzamentoPopulacao(DNA5, DNA1, DNA2, DNA3, DNA4, DNA5);
-    
+        int MelhorDNA = SelecionaPopulacao(SelecaoNatural) + 1;
+        if(MelhorDNA == 1){
+            CruzamentoPopulacao(DNA1, DNA1, DNA2, DNA3, DNA4, DNA5);
+            DNAevoluido = DNA1;
+            MutacaoDNA(DNA2);
+        }
+        if(MelhorDNA == 2){
+            CruzamentoPopulacao(DNA2, DNA1, DNA2, DNA3, DNA4, DNA5);
+            DNAevoluido = DNA2;
+            MutacaoDNA(DNA3);
+        }        
+        if(MelhorDNA == 3){
+            CruzamentoPopulacao(DNA3, DNA1, DNA2, DNA3, DNA4, DNA5);
+            DNAevoluido = DNA3;
+            MutacaoDNA(DNA4);
+        }
+        if(MelhorDNA == 4){
+            CruzamentoPopulacao(DNA4, DNA1, DNA2, DNA3, DNA4, DNA5);
+            DNAevoluido = DNA4;
+            MutacaoDNA(DNA5);
+        }
+        if(MelhorDNA == 5){
+            CruzamentoPopulacao(DNA5, DNA1, DNA2, DNA3, DNA4, DNA5);
+            DNAevoluido = DNA5;
+            MutacaoDNA(DNA1);
+        }       
+    }
+
+    FimDaEvolucao(candidatoIdeal, DNAevoluido);
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -273,6 +291,11 @@ int SelecionaPopulacao(double* SelecaoNatural){
     return indiceDNA;
 }
 
+void MutacaoDNA(double* DNA){
+    for(int aux = 0; aux < 13; aux ++)
+        DNA[aux] = (((double)((rand()%101))/100));
+}
+
 void CruzamentoPopulacao(double* MelhorDNA, double* DNA1, double* DNA2, double* DNA3, double* DNA4, double* DNA5){
     for(int aux = 0; aux < 13; aux ++){
         DNA1[aux] = (MelhorDNA[aux] + DNA1[aux]) / 2;
@@ -293,6 +316,70 @@ void CruzamentoPopulacao(double* MelhorDNA, double* DNA1, double* DNA2, double* 
     for(int aux = 0; aux < 13; aux ++){
         DNA5[aux] = (MelhorDNA[aux] + DNA5[aux]) / 2;
     }
+}
+
+void FimDaEvolucao(Candidato* candidatoIdeal, double* DNAevoluido){
+    candidatoIdeal -> educacao = DNAevoluido[0];
+    candidatoIdeal -> educacaoSexual = DNAevoluido[1];
+    candidatoIdeal -> saudePublica = DNAevoluido[2];
+    candidatoIdeal -> segurancaPublica = DNAevoluido[3];
+    candidatoIdeal -> porteArma = DNAevoluido[4];
+    candidatoIdeal -> estadoLaico = DNAevoluido[5];
+    candidatoIdeal -> estatutoFamilia = DNAevoluido[6];
+    candidatoIdeal -> legalizarAborto = DNAevoluido[7];
+    candidatoIdeal -> reformaTrabalhista = DNAevoluido[8];
+    candidatoIdeal -> reformaAgraria = DNAevoluido[9];
+    candidatoIdeal -> legalizarMaconha = DNAevoluido[10];
+    candidatoIdeal -> intervencaoMilitar = DNAevoluido[11];
+    candidatoIdeal -> escolaSemPartido = DNAevoluido[12];
+
+    //---- Carater politico e economico ----
+        
+        //---- Decobrir se um candidato é autoritario ou liberal ----
+    double criteriosAutoritario = (candidatoIdeal -> saudePublica + candidatoIdeal -> segurancaPublica + candidatoIdeal -> estatutoFamilia +
+                                    + candidatoIdeal -> reformaTrabalhista + candidatoIdeal -> reformaAgraria + candidatoIdeal -> intervencaoMilitar +
+                                    + candidatoIdeal -> escolaSemPartido);
+    candidatoIdeal -> autoritario = (criteriosAutoritario/7); // 7 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
+    printf("%lf \n", candidatoIdeal -> autoritario);
+
+    double criteriosLibertario = (candidatoIdeal -> porteArma + candidatoIdeal -> estadoLaico + candidatoIdeal -> legalizarAborto + candidatoIdeal -> legalizarMaconha);
+    candidatoIdeal -> libertario = (criteriosLibertario/4);
+    printf("%lf \n", candidatoIdeal -> libertario); // 4 é o numero de caracteristicas que definem, normalizar entre 0 e 1
+
+        //---- Descobrir se um candidato é de direita, centro ou esquerda -----
+    double criteriosDireita = (candidatoIdeal -> estatutoFamilia + candidatoIdeal -> reformaTrabalhista + candidatoIdeal -> intervencaoMilitar + 
+                                + candidatoIdeal -> escolaSemPartido); 
+    candidatoIdeal -> direita = (criteriosDireita/4); // 4 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
+    printf("%lf \n", candidatoIdeal -> direita); 
+
+    //double criteriosCentro = (candidatoIdeal -> classeC)
+    
+    double criteriosEsquerda = (candidatoIdeal -> educacaoSexual + candidatoIdeal -> saudePublica + candidatoIdeal -> segurancaPublica + 
+                                + candidatoIdeal -> estadoLaico + candidatoIdeal -> legalizarAborto + candidatoIdeal -> reformaAgraria);
+    candidatoIdeal -> esquerda = (criteriosEsquerda /6);
+    printf("%lf \n", candidatoIdeal -> esquerda); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
+
+    //---- Carater Social ----
+
+    double criteriosDireitaSocial = (candidatoIdeal -> segurancaPublica + candidatoIdeal -> porteArma + candidatoIdeal -> estatutoFamilia +
+                                    + candidatoIdeal -> reformaTrabalhista + candidatoIdeal -> intervencaoMilitar + candidatoIdeal -> escolaSemPartido);
+    candidatoIdeal -> direitaSocial = (criteriosDireitaSocial/6); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
+    printf("%lf\n",candidatoIdeal -> direitaSocial);
+
+    double criteriosEsquerdaSocial = (candidatoIdeal -> educacao + candidatoIdeal -> educacaoSexual + candidatoIdeal -> saudePublica + candidatoIdeal -> estadoLaico +
+                                    + candidatoIdeal -> legalizarAborto + candidatoIdeal -> legalizarMaconha);
+    candidatoIdeal -> esquerdaSocial = (criteriosEsquerdaSocial/6); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
+    printf("%lf\n",candidatoIdeal -> esquerdaSocial);
+    
+    
+
+    printf(" O nível ideal de autoritarismo de um candidato é: %lf \n",candidatoIdeal -> autoritario);
+    printf(" O nível ideal de liberalismo de um candidato é: %lf \n",candidatoIdeal -> libertario);
+    printf(" O nível ideal de direita de um candidato é: %lf \n",candidatoIdeal -> direita);
+    //printf(" O nível ideal de centro de um candidato é: %lf \n",CentroIdeal);
+    printf(" O nível ideal de esquerda de um candidato é: %lf \n",candidatoIdeal -> esquerda);
+    printf(" O nível ideal de direitaSocial de um candidato é: %lf \n",candidatoIdeal -> direitaSocial);
+    printf(" O nível ideal de esquerdaSocial de um candidato é: %lf \n",candidatoIdeal -> esquerdaSocial);
 }
 
 void AvaliaPopulacao(double* pontuacao, Candidato* candidatoTeste, double* DNA, double* AutoritarioIdeal, double* LibertarioIdeal, double* DireitaIdeal, double* CentroIdeal, double* EsquerdaIdeal, 
