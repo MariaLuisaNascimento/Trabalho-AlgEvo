@@ -6,6 +6,8 @@
 
 using namespace std;
 
+
+
 /* ---------------------------------------------------- DECLARAR AS CLASSES ----------------------------------------------------------------------------*/
 class Candidato{ 
     //Parametros
@@ -85,12 +87,21 @@ EstadosEleitores* Goias, EstadosEleitores* MinasGerais, EstadosEleitores* Amazon
 EstadosEleitores* Amapa, EstadosEleitores* Sergipe, EstadosEleitores* Acre, EstadosEleitores* Pernambuco, EstadosEleitores* RioGrandeDoNorte, EstadosEleitores* Bahia,
 EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, EstadosEleitores* Alagoas, EstadosEleitores* Piaui, EstadosEleitores* Maranhao);
 
-void IniciaPopulacao(Candidato* candidatoTeste);
+void IniciaPopulacao(double* gene1, double* gene2, double* gene3, double* gene4, double* gene5, double* gene6, double* gene7,double* gene8,
+double* gene9, double* gene10, double* gene11, double* gene12, double* gene13);
+
+void AvaliaPopulacao(double* pontuacao, Candidato* candidatoTeste, double* DNA, double* AutoritarioIdeal, double* LibertarioIdeal, double* DireitaIdeal, double* CentroIdeal, double* EsquerdaIdeal, 
+double* DireitaSocialIdeal, double* EsquerdaSocialIdeal);
+
+int SelecionaPopulacao(double* SelecaoNatural);
+
+void CruzamentoPopulacao(double* MelhorDNA, double* DNA1, double* DNA2, double* DNA3, double* DNA4, double* DNA5);
 
 /* ------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 
 int main(){
+    srand( (unsigned)time(NULL) );
 /* ---------------------------------------------------- SETAR ESTADOS BRASILEIROS ------------------------------------------------------------------*/
     EstadosEleitores* DistritoFederal = new EstadosEleitores;       //1
     EstadosEleitores* SaoPaulo = new EstadosEleitores;              //2
@@ -141,8 +152,63 @@ int main(){
     printf(" O nível ideal de esquerdaSocial de um candidato é: %lf \n",EsquerdaSocialIdeal);
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 /* ---------------------------------------------------- EVOLUIR O CANDIDATO ---------------------------------------------------------------------------*/   
+    
     Candidato* candidatoTeste = new Candidato;
-    IniciaPopulacao(candidatoTeste);
+    double gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13;
+    /*double *DNA1, *DNA2, *DNA3, *DNA4, *DNA5;
+    DNA1 = (double*) malloc(13 * sizeof(double));
+    DNA2 = (double*) malloc(13 * sizeof(double));
+    DNA3 = (double*) malloc(13 * sizeof(double));
+    DNA4 = (double*) malloc(13 * sizeof(double));
+    DNA5 = (double*) malloc(13 * sizeof(double));*/
+
+    IniciaPopulacao(&gene1, &gene2, &gene3, &gene4, &gene5, &gene6, &gene7, &gene8, &gene9, &gene10, &gene11, &gene12, &gene13);
+    double DNA1[13] = {gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13};
+    
+    IniciaPopulacao(&gene1, &gene2, &gene3, &gene4, &gene5, &gene6, &gene7, &gene8, &gene9, &gene10, &gene11, &gene12, &gene13);
+    double DNA2[13] = {gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13};
+
+    IniciaPopulacao(&gene1, &gene2, &gene3, &gene4, &gene5, &gene6, &gene7, &gene8, &gene9, &gene10, &gene11, &gene12, &gene13);
+    double DNA3[13] = {gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13};
+    
+    IniciaPopulacao(&gene1, &gene2, &gene3, &gene4, &gene5, &gene6, &gene7, &gene8, &gene9, &gene10, &gene11, &gene12, &gene13);
+    double DNA4[13] = {gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13};
+
+    IniciaPopulacao(&gene1, &gene2, &gene3, &gene4, &gene5, &gene6, &gene7, &gene8, &gene9, &gene10, &gene11, &gene12, &gene13);
+    double DNA5[13] = {gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13};
+    
+
+    double *SelecaoNatural = (double*) malloc(5 * sizeof(double));
+    double pontuacao;
+    
+    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA1, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+    SelecaoNatural[0] = pontuacao;
+
+    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA2, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+    SelecaoNatural[1] = pontuacao;
+
+    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA3, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+    SelecaoNatural[2] = pontuacao;
+
+    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA4, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+    SelecaoNatural[3] = pontuacao;
+
+    AvaliaPopulacao(&pontuacao, candidatoTeste, DNA5, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
+    SelecaoNatural[4] = pontuacao;
+
+    int MelhorDNA = SelecionaPopulacao(SelecaoNatural) + 1;
+    if(MelhorDNA == 1)
+        CruzamentoPopulacao(DNA1, DNA1, DNA2, DNA3, DNA4, DNA5);
+    if(MelhorDNA == 2)
+        CruzamentoPopulacao(DNA2, DNA1, DNA2, DNA3, DNA4, DNA5);
+    if(MelhorDNA == 3)
+        CruzamentoPopulacao(DNA3, DNA1, DNA2, DNA3, DNA4, DNA5);
+    if(MelhorDNA == 4)
+        CruzamentoPopulacao(DNA4, DNA1, DNA2, DNA3, DNA4, DNA5);
+    if(MelhorDNA == 5)
+        CruzamentoPopulacao(DNA5, DNA1, DNA2, DNA3, DNA4, DNA5);
+    
+
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
     delete DistritoFederal;       //1
@@ -177,27 +243,75 @@ int main(){
 
 
 
-void IniciaPopulacao(Candidato* candidatoTeste){
+void IniciaPopulacao(double* gene1, double* gene2, double* gene3, double* gene4, double* gene5, double* gene6, double* gene7,double* gene8,
+double* gene9, double* gene10, double* gene11, double* gene12, double* gene13){
      //---- Inicilalizando os genes da especie que serão evoluídos -----
-    double gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13;
+    *gene1 = (((double)((rand()%101))/100));
+    *gene2 = (((double)((rand()%101))/100));
+    *gene3 = (((double)((rand()%101))/100)); 
+    *gene4 = (((double)((rand()%101))/100));
+    *gene5 = (((double)((rand()%101))/100));
+    *gene6 = (((double)((rand()%101))/100));
+    *gene7 = (((double)((rand()%101))/100));
+    *gene8 = (((double)((rand()%101))/100));
+    *gene9 = (((double)((rand()%101))/100));
+    *gene10 = (((double)((rand()%101))/100));
+    *gene11 = (((double)((rand()%101))/100));
+    *gene12 = (((double)((rand()%101))/100));
+    *gene13 = (((double)((rand()%101))/100));
+}
 
-     srand( (unsigned)time(NULL) );
+int SelecionaPopulacao(double* SelecaoNatural){
+    double MaisAdaptados = 13700000000;
+    int indiceDNA;
+    for(int aux = 0; aux < 5; aux++){
+        if(SelecaoNatural[aux] < MaisAdaptados){
+            MaisAdaptados = SelecaoNatural[aux];
+            indiceDNA = aux;
+        }
+    }
+    return indiceDNA;
+}
 
-    //---- Inicializando os parametros do candidato ----- (acho que a evolução sera neles)
-    candidatoTeste -> educacao = (((double)((rand()%101))/100));
-    candidatoTeste -> educacaoSexual = (((double)((rand()%101))/100));
-    candidatoTeste -> saudePublica = (((double)((rand()%101))/100));
-    candidatoTeste -> segurancaPublica = (((double)((rand()%101))/100));
-    candidatoTeste -> porteArma = (((double)((rand()%101))/100));
-    candidatoTeste -> estadoLaico = (((double)((rand()%101))/100));
-    candidatoTeste -> estatutoFamilia = (((double)((rand()%101))/100));
-    candidatoTeste -> legalizarAborto = (((double)((rand()%101))/100));
-    candidatoTeste -> reformaTrabalhista = (((double)((rand()%101))/100));
-    candidatoTeste -> reformaAgraria = (((double)((rand()%101))/100));
-    candidatoTeste -> legalizarMaconha = (((double)((rand()%101))/100));
-    candidatoTeste -> intervencaoMilitar = (((double)((rand()%101))/100));
-    candidatoTeste -> escolaSemPartido = (((double)((rand()%101))/100));
+void CruzamentoPopulacao(double* MelhorDNA, double* DNA1, double* DNA2, double* DNA3, double* DNA4, double* DNA5){
+    for(int aux = 0; aux < 13; aux ++){
+        DNA1[aux] = (MelhorDNA[aux] + DNA1[aux]) / 2;
+    }
 
+    for(int aux = 0; aux < 13; aux ++){
+        DNA2[aux] = (MelhorDNA[aux] + DNA2[aux]) / 2;
+    }
+
+    for(int aux = 0; aux < 13; aux ++){
+        DNA3[aux] = (MelhorDNA[aux] + DNA3[aux]) / 2;
+    }
+
+    for(int aux = 0; aux < 13; aux ++){
+        DNA4[aux] = (MelhorDNA[aux] + DNA4[aux]) / 2;
+    }
+
+    for(int aux = 0; aux < 13; aux ++){
+        DNA5[aux] = (MelhorDNA[aux] + DNA5[aux]) / 2;
+    }
+}
+
+void AvaliaPopulacao(double* pontuacao, Candidato* candidatoTeste, double* DNA, double* AutoritarioIdeal, double* LibertarioIdeal, double* DireitaIdeal, double* CentroIdeal, double* EsquerdaIdeal, 
+double* DireitaSocialIdeal, double* EsquerdaSocialIdeal){
+    //---- A especie testada recebe o DNA -----
+    candidatoTeste -> educacao = DNA[0];
+    candidatoTeste -> educacaoSexual = DNA[1];
+    candidatoTeste -> saudePublica = DNA[2];
+    candidatoTeste -> segurancaPublica = DNA[3];
+    candidatoTeste -> porteArma = DNA[4];
+    candidatoTeste -> estadoLaico = DNA[5];
+    candidatoTeste -> estatutoFamilia = DNA[6];
+    candidatoTeste -> legalizarAborto = DNA[7];
+    candidatoTeste -> reformaTrabalhista = DNA[8];
+    candidatoTeste -> reformaAgraria = DNA[9];
+    candidatoTeste -> legalizarMaconha = DNA[10];
+    candidatoTeste -> intervencaoMilitar = DNA[11];
+    candidatoTeste -> escolaSemPartido = DNA[12];
+    
     //---- Carater politico e economico ----
         
         //---- Decobrir se um candidato é autoritario ou liberal ----
@@ -213,6 +327,8 @@ void IniciaPopulacao(Candidato* candidatoTeste){
 
     if(candidatoTeste -> autoritario > candidatoTeste -> libertario)
         printf("O candidato tem um viés político e economico autoritario\n");
+    else if(candidatoTeste -> autoritario == candidatoTeste -> libertario)
+        printf("O candidato tem um viés político e economico tanto autoritario quanto libertario\n");
     else 
         printf("O candidato tem um viés político e economico libertario\n");
 
@@ -258,8 +374,44 @@ void IniciaPopulacao(Candidato* candidatoTeste){
 
     if(candidatoTeste -> direitaSocial > candidatoTeste -> esquerdaSocial)
         printf("O candidato tem um viés social de direita\n");
+    else if(candidatoTeste -> direitaSocial == candidatoTeste -> esquerdaSocial)
+        printf("O candidato tem um viés social com algumas medidas de direita e em igual proporção de medidas de esquerda\n");
     else 
         printf("O candidato tem um viés social de esquerda\n");
+    
+
+    //Pontuacao
+    double ponto1, ponto2, ponto3, ponto4, ponto5, ponto6, ponto7;
+
+    ponto1 = *AutoritarioIdeal - (candidatoTeste-> autoritario);
+    if(ponto1 < 0)
+        ponto1 = (-1) * ponto1;
+
+    ponto2 = *LibertarioIdeal - (candidatoTeste-> libertario);
+    if(ponto2 < 0)
+        ponto2 = (-1) * ponto2;
+    
+    ponto3 = *DireitaIdeal - (candidatoTeste-> direita);
+    if(ponto3 < 0)
+        ponto3 = (-1) * ponto3;
+
+    ponto4 = *CentroIdeal - (candidatoTeste-> centro);
+    if(ponto4 < 0)
+        ponto4 = (-1) * ponto4;
+    
+    ponto5 = *EsquerdaIdeal - (candidatoTeste-> esquerda);
+    if(ponto5 < 0)
+        ponto5 = (-1) * ponto5;
+
+    ponto6 = *DireitaSocialIdeal - (candidatoTeste-> direitaSocial);
+    if(ponto6 < 0)
+        ponto6 = (-1) * ponto6;
+
+    ponto7 = *EsquerdaSocialIdeal - (candidatoTeste-> esquerdaSocial);
+    if(ponto7 < 0)
+        ponto7 = (-1) * ponto7;
+
+    *pontuacao = ponto1 + ponto2 + ponto3 + ponto4 + ponto5 + ponto6 + ponto7;
 }
  
 /*-------------------------------------------------DEFINIR OS VALORES DOS CAMPOS DE CADA ESTADO--------------------------------------------------------------------*/
