@@ -3,165 +3,24 @@
 #include <curses.h>
 #include <stdlib.h>
 #include <time.h>
+#include "Classes.hpp"
 
 #define geracoes 100
 using namespace std;
 
-/* ---------------------------------------------------- DECLARAR AS CLASSES ----------------------------------------------------------------------------*/
-class Candidato{ 
-    //Parametros
-    public:
-    double educacao;
-    double educacaoSexual;
-    double saudePublica;
-    double segurancaPublica;
-    double porteArma;
-    double estadoLaico;
-    double estatutoFamilia;
-    double legalizarAborto;
-    double reformaTrabalhista;
-    double reformaAgraria;
-    double legalizarMaconha;
-    double intervencaoMilitar;
-    double escolaSemPartido;
-
-    //Caracteristicas
-        //Carater politico e economico
-    double autoritario;
-    double libertario;
-
-    double direita;
-    double centro;
-    double esquerda;
-
-        //Carater social
-    double direitaSocial;
-    double esquerdaSocial;
-};
-
-class EstadosEleitores{ 
-    public:
-    double classeA;
-    double classeB;
-    double classeC;
-    double classesED;
-    double popVotante;
-    double religiosidade;
-    //Determinantes IDH
-    double rendaPerCapta;
-    double ensinoSuperior;
-    double analfabetismo;
-    /*-3 é extrema esquerda, -2 é esquerda, -1 é centro-esquerda, 0 é centro,
-    3 é extrema direita, 2 é direta e 1 é centro-direita*/
-    int partidoMaisInf;
-    //vamos fazer 1- primário, 2- sec e 3 - ter
-    int setorMaisImport;
-    double iGini; // indice para medir desigualdade social 
-    double taxaHomi;
-    double parcelaIdosos;
-
-    //Caracteristicas
-        //Carater politico e economico
-    double nivelAutoritario;
-    double nivelLibertario;
-
-    double nivelDireita;
-    double nivelCentro;
-    double nivelEsquerda;
-
-        //Carater social
-    double nivelDireitaSocial;
-    double nivelEsquerdaSocial;
-};
-
-/* ---------------------------------------------------------------------------------------------------------------------------------------------*/
-
-
-/* ------------------------------------------------- DECLARAR AS FUNCOES DA EVOLUCAO -----------------------------------------------------------*/
-
-void IniciaMundo (double* AutoritarioIdeal, double* LibertarioIdeal, double* DireitaIdeal, double* CentroIdeal, double* EsquerdaIdeal, double* DireitaSocialIdeal,
-double* EsquerdaSocialIdeal, EstadosEleitores* DistritoFederal, EstadosEleitores* SaoPaulo, EstadosEleitores* RioDeJaneiro, EstadosEleitores* SantaCatarina,
-EstadosEleitores* RioGrandeDoSul, EstadosEleitores* Parana, EstadosEleitores* MatoGrosso, EstadosEleitores* MatoGrossoDoSul, EstadosEleitores* EspiritoSanto,
-EstadosEleitores* Goias, EstadosEleitores* MinasGerais, EstadosEleitores* Amazonas, EstadosEleitores* Rondonia, EstadosEleitores* Roraima, EstadosEleitores* Tocantins,
-EstadosEleitores* Amapa, EstadosEleitores* Sergipe, EstadosEleitores* Acre, EstadosEleitores* Pernambuco, EstadosEleitores* RioGrandeDoNorte, EstadosEleitores* Bahia,
-EstadosEleitores* Para, EstadosEleitores* Ceara, EstadosEleitores* Paraiba, EstadosEleitores* Alagoas, EstadosEleitores* Piaui, EstadosEleitores* Maranhao);
-
-void IniciaPopulacao(double* gene1, double* gene2, double* gene3, double* gene4, double* gene5, double* gene6, double* gene7,double* gene8,
-double* gene9, double* gene10, double* gene11, double* gene12, double* gene13);
-
-void AvaliaPopulacao(double* pontuacao, Candidato* candidatoTeste, double* DNA, double* AutoritarioIdeal, double* LibertarioIdeal, double* DireitaIdeal, double* CentroIdeal, double* EsquerdaIdeal, 
-double* DireitaSocialIdeal, double* EsquerdaSocialIdeal);
-
-int SelecionaPopulacao(double* SelecaoNatural);
-
-void CruzamentoPopulacao(double* MelhorDNA, double* DNA1, double* DNA2, double* DNA3, double* DNA4, double* DNA5);
-
-void MutacaoDNA(double* DNA);
-
-void FimDaEvolucao(Candidato* candidatoIdeal, double* DNAevoluido);
-
-/* ------------------------------------------------------------------------------------------------------------------------------------------------*/
-
-
 int main(){
-    srand( (unsigned)time(NULL) );
-/* ---------------------------------------------------- SETAR ESTADOS BRASILEIROS ------------------------------------------------------------------*/
-    EstadosEleitores* DistritoFederal = new EstadosEleitores;       //1
-    EstadosEleitores* SaoPaulo = new EstadosEleitores;              //2
-    EstadosEleitores* RioDeJaneiro = new EstadosEleitores;          //3
-    EstadosEleitores* SantaCatarina = new EstadosEleitores;         //4
-    EstadosEleitores* RioGrandeDoSul = new EstadosEleitores;        //5
-    EstadosEleitores* Parana = new EstadosEleitores;                //6
-    EstadosEleitores* MatoGrosso = new EstadosEleitores;            //7
-    EstadosEleitores* MatoGrossoDoSul = new EstadosEleitores;       //8
-    EstadosEleitores* EspiritoSanto = new EstadosEleitores;         //9
-    EstadosEleitores* Goias = new EstadosEleitores;                 //10
-    EstadosEleitores* MinasGerais = new EstadosEleitores;           //11
-    EstadosEleitores* Amazonas = new EstadosEleitores;              //12
-    EstadosEleitores* Rondonia = new EstadosEleitores;              //13
-    EstadosEleitores* Roraima = new EstadosEleitores;               //14
-    EstadosEleitores* Tocantins = new EstadosEleitores;             //15
-    EstadosEleitores* Amapa = new EstadosEleitores;                 //16
-    EstadosEleitores* Sergipe = new EstadosEleitores;               //17
-    EstadosEleitores* Acre = new EstadosEleitores;                  //18
-    EstadosEleitores* Pernambuco = new EstadosEleitores;            //19
-    EstadosEleitores* RioGrandeDoNorte = new EstadosEleitores;      //20
-    EstadosEleitores* Bahia = new EstadosEleitores;                 //21
-    EstadosEleitores* Para = new EstadosEleitores;                  //22
-    EstadosEleitores* Ceara = new EstadosEleitores;                 //23
-    EstadosEleitores* Paraiba = new EstadosEleitores;               //24
-    EstadosEleitores* Alagoas = new EstadosEleitores;               //25
-    EstadosEleitores* Piaui = new EstadosEleitores;                 //26
-    EstadosEleitores* Maranhao = new EstadosEleitores;              //27
-    
-    double AutoritarioIdeal; 
-    double LibertarioIdeal;
-    double DireitaIdeal;
-    double CentroIdeal;
-    double EsquerdaIdeal;
-    double DireitaSocialIdeal;
-    double EsquerdaSocialIdeal;
+    srand( (unsigned)time(NULL) );   
 
     IniciaMundo(&AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal,DistritoFederal,SaoPaulo,
     RioDeJaneiro,SantaCatarina,RioGrandeDoSul,Parana,MatoGrosso,MatoGrossoDoSul,EspiritoSanto,Goias,MinasGerais,Amazonas,Rondonia,Roraima,Tocantins,Amapa,
     Sergipe,Acre,Pernambuco,RioGrandeDoNorte,Bahia,Para,Ceara,Paraiba,Alagoas,Piaui,Maranhao);
-   
-    printf(" O nível ideal de autoritarismo de um candidato é: %lf \n",AutoritarioIdeal);
-    printf(" O nível ideal de liberalismo de um candidato é: %lf \n",LibertarioIdeal);
-    printf(" O nível ideal de direita de um candidato é: %lf \n",DireitaIdeal);
-    printf(" O nível ideal de centro de um candidato é: %lf \n",CentroIdeal);
-    printf(" O nível ideal de esquerda de um candidato é: %lf \n",EsquerdaIdeal);
-    printf(" O nível ideal de direitaSocial de um candidato é: %lf \n",DireitaSocialIdeal);
-    printf(" O nível ideal de esquerdaSocial de um candidato é: %lf \n",EsquerdaSocialIdeal);
-/* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* ---------------------------------------------------- EVOLUIR O CANDIDATO ---------------------------------------------------------------------------*/   
-    
-    Candidato* candidatoTeste = new Candidato;
-    Candidato* candidatoIdeal = new Candidato;
-    double gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13;
-    double* DNAevoluido;
-    DNAevoluido = (double*) malloc(13 * sizeof(double));
 
+	/* ---------------------------- EVOLUIR O CANDIDATO ---------------------------------------*/   
+
+    double* DNAevoluido =(double*) malloc(13 * sizeof(double));
+    double gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13;
+
+    
     IniciaPopulacao(&gene1, &gene2, &gene3, &gene4, &gene5, &gene6, &gene7, &gene8, &gene9, &gene10, &gene11, &gene12, &gene13);
     double DNA1[13] = {gene1, gene2, gene3, gene4, gene5, gene6, gene7, gene8, gene9, gene10, gene11, gene12, gene13};
     
@@ -180,6 +39,7 @@ int main(){
 
     double *SelecaoNatural = (double*) malloc(5 * sizeof(double));
     double pontuacao;
+    
     
     for(int aux = 0; aux < geracoes; aux ++){
         AvaliaPopulacao(&pontuacao, candidatoTeste, DNA1, &AutoritarioIdeal,&LibertarioIdeal,&DireitaIdeal,&CentroIdeal,&EsquerdaIdeal,&DireitaSocialIdeal,&EsquerdaSocialIdeal);
@@ -227,6 +87,16 @@ int main(){
 
     FimDaEvolucao(candidatoIdeal, DNAevoluido);
 
+
+    printf("\n\nSEGUNDO OS PARAMETROS DOS ESTADOS:\n");
+    printf(" O nível ideal de autoritarismo de um candidato é: %lf \n",AutoritarioIdeal);
+    printf(" O nível ideal de liberalismo de um candidato é: %lf \n",LibertarioIdeal);
+    printf(" O nível ideal de direita de um candidato é: %lf \n",DireitaIdeal);
+    printf(" O nível ideal de centro de um candidato é: %lf \n",CentroIdeal);
+    printf(" O nível ideal de esquerda de um candidato é: %lf \n",EsquerdaIdeal);
+    printf(" O nível ideal de direitaSocial de um candidato é: %lf \n",DireitaSocialIdeal);
+    printf(" O nível ideal de esquerdaSocial de um candidato é: %lf \n",EsquerdaSocialIdeal);
+
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
     delete DistritoFederal;       //1
@@ -255,7 +125,11 @@ int main(){
     delete Paraiba;               //24
     delete Alagoas;               //25
     delete Piaui;                 //26
-    delete Maranhao;  
+    delete Maranhao;  			  //27
+    
+    delete candidatoTeste;
+    delete candidatoIdeal;
+
     return 0;
 }
 
@@ -280,7 +154,7 @@ double* gene9, double* gene10, double* gene11, double* gene12, double* gene13){
 }
 
 int SelecionaPopulacao(double* SelecaoNatural){
-    double MaisAdaptados = 13700000000;
+    double MaisAdaptados = 13700000000; //Um numero bem grande 
     int indiceDNA;
     for(int aux = 0; aux < 5; aux++){
         if(SelecaoNatural[aux] < MaisAdaptados){
@@ -340,43 +214,45 @@ void FimDaEvolucao(Candidato* candidatoIdeal, double* DNAevoluido){
                                     + candidatoIdeal -> reformaTrabalhista + candidatoIdeal -> reformaAgraria + candidatoIdeal -> intervencaoMilitar +
                                     + candidatoIdeal -> escolaSemPartido);
     candidatoIdeal -> autoritario = (criteriosAutoritario/7); // 7 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
-    printf("%lf \n", candidatoIdeal -> autoritario);
+    //printf("%lf \n", candidatoIdeal -> autoritario);
 
     double criteriosLibertario = (candidatoIdeal -> porteArma + candidatoIdeal -> estadoLaico + candidatoIdeal -> legalizarAborto + candidatoIdeal -> legalizarMaconha);
     candidatoIdeal -> libertario = (criteriosLibertario/4);
-    printf("%lf \n", candidatoIdeal -> libertario); // 4 é o numero de caracteristicas que definem, normalizar entre 0 e 1
+    //printf("%lf \n", candidatoIdeal -> libertario); // 4 é o numero de caracteristicas que definem, normalizar entre 0 e 1
 
         //---- Descobrir se um candidato é de direita, centro ou esquerda -----
     double criteriosDireita = (candidatoIdeal -> estatutoFamilia + candidatoIdeal -> reformaTrabalhista + candidatoIdeal -> intervencaoMilitar + 
                                 + candidatoIdeal -> escolaSemPartido); 
     candidatoIdeal -> direita = (criteriosDireita/4); // 4 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
-    printf("%lf \n", candidatoIdeal -> direita); 
-
-    //double criteriosCentro = (candidatoIdeal -> classeC)
+    //printf("%lf \n", candidatoIdeal -> direita); 
     
     double criteriosEsquerda = (candidatoIdeal -> educacaoSexual + candidatoIdeal -> saudePublica + candidatoIdeal -> segurancaPublica + 
                                 + candidatoIdeal -> estadoLaico + candidatoIdeal -> legalizarAborto + candidatoIdeal -> reformaAgraria);
     candidatoIdeal -> esquerda = (criteriosEsquerda /6);
-    printf("%lf \n", candidatoIdeal -> esquerda); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
+
+    candidatoIdeal -> centro = (0.819422 + 0.317659 + 0.137988) - candidatoIdeal-> direita - candidatoIdeal -> esquerda;
+    if(candidatoIdeal -> centro < 0)
+        candidatoIdeal -> centro = (-1)*(candidatoIdeal -> centro);
+    //printf("%lf \n", candidatoIdeal -> esquerda); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
 
     //---- Carater Social ----
 
     double criteriosDireitaSocial = (candidatoIdeal -> segurancaPublica + candidatoIdeal -> porteArma + candidatoIdeal -> estatutoFamilia +
                                     + candidatoIdeal -> reformaTrabalhista + candidatoIdeal -> intervencaoMilitar + candidatoIdeal -> escolaSemPartido);
     candidatoIdeal -> direitaSocial = (criteriosDireitaSocial/6); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
-    printf("%lf\n",candidatoIdeal -> direitaSocial);
+    //printf("%lf\n",candidatoIdeal -> direitaSocial);
 
     double criteriosEsquerdaSocial = (candidatoIdeal -> educacao + candidatoIdeal -> educacaoSexual + candidatoIdeal -> saudePublica + candidatoIdeal -> estadoLaico +
                                     + candidatoIdeal -> legalizarAborto + candidatoIdeal -> legalizarMaconha);
     candidatoIdeal -> esquerdaSocial = (criteriosEsquerdaSocial/6); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
-    printf("%lf\n",candidatoIdeal -> esquerdaSocial);
+    //printf("%lf\n",candidatoIdeal -> esquerdaSocial);
     
     
-
+    printf("\n\nSEGUNDO OS PARAMETROS DO CANDIDATO EVOLUIDO:\n");
     printf(" O nível ideal de autoritarismo de um candidato é: %lf \n",candidatoIdeal -> autoritario);
     printf(" O nível ideal de liberalismo de um candidato é: %lf \n",candidatoIdeal -> libertario);
     printf(" O nível ideal de direita de um candidato é: %lf \n",candidatoIdeal -> direita);
-    //printf(" O nível ideal de centro de um candidato é: %lf \n",CentroIdeal);
+    printf(" O nível ideal de centro de um candidato é: %lf \n",candidatoIdeal -> centro);
     printf(" O nível ideal de esquerda de um candidato é: %lf \n",candidatoIdeal -> esquerda);
     printf(" O nível ideal de direitaSocial de um candidato é: %lf \n",candidatoIdeal -> direitaSocial);
     printf(" O nível ideal de esquerdaSocial de um candidato é: %lf \n",candidatoIdeal -> esquerdaSocial);
@@ -406,45 +282,41 @@ double* DireitaSocialIdeal, double* EsquerdaSocialIdeal){
                                     + candidatoTeste -> reformaTrabalhista + candidatoTeste -> reformaAgraria + candidatoTeste -> intervencaoMilitar +
                                     + candidatoTeste -> escolaSemPartido);
     candidatoTeste -> autoritario = (criteriosAutoritario/7); // 7 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
-    printf("%lf \n", candidatoTeste -> autoritario);
 
     double criteriosLibertario = (candidatoTeste -> porteArma + candidatoTeste -> estadoLaico + candidatoTeste -> legalizarAborto + candidatoTeste -> legalizarMaconha);
-    candidatoTeste -> libertario = (criteriosLibertario/4);
-    printf("%lf \n", candidatoTeste -> libertario); // 4 é o numero de caracteristicas que definem, normalizar entre 0 e 1
+    candidatoTeste -> libertario = (criteriosLibertario/4); // 4 é o numero de caracteristicas que definem, normalizar entre 0 e 1
 
     if(candidatoTeste -> autoritario > candidatoTeste -> libertario)
-        printf("O candidato tem um viés político e economico autoritario\n");
+        printf("O candidato tem um viés político e economico autoritario: %lf\n", candidatoTeste -> autoritario);
     else if(candidatoTeste -> autoritario == candidatoTeste -> libertario)
-        printf("O candidato tem um viés político e economico tanto autoritario quanto libertario\n");
+        printf("O candidato tem um viés político e economico tanto autoritario quanto libertario: %lf,  %lf\n", candidatoTeste -> autoritario, candidatoTeste -> libertario);
     else 
-        printf("O candidato tem um viés político e economico libertario\n");
+        printf("O candidato tem um viés político e economico libertario: %lf\n", candidatoTeste -> libertario);
 
         //---- Descobrir se um candidato é de direita, centro ou esquerda -----
     double criteriosDireita = (candidatoTeste -> estatutoFamilia + candidatoTeste -> reformaTrabalhista + candidatoTeste -> intervencaoMilitar + 
                                 + candidatoTeste -> escolaSemPartido); 
     candidatoTeste -> direita = (criteriosDireita/4); // 4 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
-    printf("%lf \n", candidatoTeste -> direita); 
-    
+
     double criteriosEsquerda = (candidatoTeste -> educacaoSexual + candidatoTeste -> saudePublica + candidatoTeste -> segurancaPublica + 
                                 + candidatoTeste -> estadoLaico + candidatoTeste -> legalizarAborto + candidatoTeste -> reformaAgraria);
-    candidatoTeste -> esquerda = (criteriosEsquerda /6);
-    printf("%lf \n", candidatoTeste -> esquerda); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
+    candidatoTeste -> esquerda = (criteriosEsquerda /6);// 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
 
     if(candidatoTeste -> direita > 0.5 && candidatoTeste -> esquerda > 0.5){
         if(candidatoTeste -> direita > candidatoTeste -> esquerda)
-            printf("O candidato tem um viés político e economico de direita\n");
+            printf("O candidato tem um viés político e economico de direita: %lf \n", candidatoTeste -> direita);
         else
-            printf("O candidato tem um viés político e economico de esquerda\n");
+            printf("O candidato tem um viés político e economico de esquerda: %lf\n", candidatoTeste -> esquerda);
     }
 
     else if(candidatoTeste -> direita > 0.5 || candidatoTeste -> esquerda > 0.5){
         if(candidatoTeste -> direita > 0.5)
-            printf("O candidato tem um viés político e economico de direita\n");
+            printf("O candidato tem um viés político e economico de direita: %lf\n", candidatoTeste -> direita);
         else
-            printf("O candidato tem um viés político e economico de esquerda\n");
+            printf("O candidato tem um viés político e economico de esquerda: %lf\n", candidatoTeste -> esquerda);
     }
     else
-        printf("O candidato tem um viés político e economico de centro\n");
+        printf("O candidato tem um viés político e economico de centro: %lf\n" , (1-(candidatoTeste -> direita + candidatoTeste -> esquerda)));
 
 
     //---- Carater Social ----
@@ -452,20 +324,19 @@ double* DireitaSocialIdeal, double* EsquerdaSocialIdeal){
     double criteriosDireitaSocial = (candidatoTeste -> segurancaPublica + candidatoTeste -> porteArma + candidatoTeste -> estatutoFamilia +
                                     + candidatoTeste -> reformaTrabalhista + candidatoTeste -> intervencaoMilitar + candidatoTeste -> escolaSemPartido);
     candidatoTeste -> direitaSocial = (criteriosDireitaSocial/6); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
-    printf("%lf\n",candidatoTeste -> direitaSocial);
 
     double criteriosEsquerdaSocial = (candidatoTeste -> educacao + candidatoTeste -> educacaoSexual + candidatoTeste -> saudePublica + candidatoTeste -> estadoLaico +
                                     + candidatoTeste -> legalizarAborto + candidatoTeste -> legalizarMaconha);
     candidatoTeste -> esquerdaSocial = (criteriosEsquerdaSocial/6); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
-    printf("%lf\n",candidatoTeste -> esquerdaSocial);
 
     if(candidatoTeste -> direitaSocial > candidatoTeste -> esquerdaSocial)
-        printf("O candidato tem um viés social de direita\n");
+        printf("O candidato tem um viés social de direita: %lf\n", candidatoTeste -> direitaSocial);
     else if(candidatoTeste -> direitaSocial == candidatoTeste -> esquerdaSocial)
-        printf("O candidato tem um viés social com algumas medidas de direita e em igual proporção de medidas de esquerda\n");
+        printf("O candidato tem um viés social com algumas medidas de direita e em igual proporção de medidas de esquerda: %lf,  %lf\n", candidatoTeste -> direitaSocial, candidatoTeste -> esquerdaSocial);
     else 
-        printf("O candidato tem um viés social de esquerda\n");
-    
+        printf("O candidato tem um viés social de esquerda: %lf\n", candidatoTeste -> esquerdaSocial);
+
+    printf("\n");
 
     //Pontuacao
     double ponto1, ponto2, ponto3, ponto4, ponto5, ponto6, ponto7;
