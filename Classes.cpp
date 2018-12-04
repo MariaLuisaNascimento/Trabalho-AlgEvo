@@ -5,7 +5,7 @@
 #include <time.h>
 #include "Classes.hpp"
 
-#define geracoes 100
+#define geracoes 10000
 using namespace std;
 
 int main(){
@@ -206,7 +206,7 @@ void FimDaEvolucao(Candidato* candidatoIdeal, double* DNAevoluido){
     candidatoIdeal -> legalizarMaconha = DNAevoluido[10];
     candidatoIdeal -> intervencaoMilitar = DNAevoluido[11];
     candidatoIdeal -> escolaSemPartido = DNAevoluido[12];
-
+    
     //---- Carater politico e economico ----
         
         //---- Decobrir se um candidato é autoritario ou liberal ----
@@ -247,6 +247,20 @@ void FimDaEvolucao(Candidato* candidatoIdeal, double* DNAevoluido){
     candidatoIdeal -> esquerdaSocial = (criteriosEsquerdaSocial/6); // 6 é o numero de caracteristicas que o definem, normalizar entre 0 e 1
     //printf("%lf\n",candidatoIdeal -> esquerdaSocial);
     
+    printf("\n\nNIVEIS ENCONTRADOS NA EVOLUCAO:\n");
+   	printf("O nível ideal de investimento em escolarida é %lf:\n", candidatoIdeal -> educacao);
+    printf("O nível ideal de investimento em educacao sexual é %lf:\n", candidatoIdeal -> educacaoSexual);
+    printf("O nível ideal de investimento em saude publica é %lf:\n", candidatoIdeal -> saudePublica);
+    printf("O nível ideal de investimento em de seguranca publica é %lf:\n", candidatoIdeal -> segurancaPublica);
+    printf("O nível ideal de investimento em de porte de arma é %lf:\n", candidatoIdeal -> porteArma);
+    printf("O nível ideal de investimento em estado laico é %lf:\n", candidatoIdeal -> estadoLaico);
+    printf("O nível ideal de investimento em estatuto da familia é %lf:\n", candidatoIdeal -> estatutoFamilia);
+    printf("O nível ideal de investimento em legalizar o aborto é %lf:\n", candidatoIdeal -> legalizarAborto);
+    printf("O nível ideal de investimento em reforma trabalhista é %lf:\n", candidatoIdeal -> reformaTrabalhista);
+    printf("O nível ideal de investimento em reforma agraria é: %lf\n", candidatoIdeal -> reformaAgraria);
+    printf("O nível ideal de investimento em legalizar maconha é: %lf\n", candidatoIdeal -> legalizarMaconha);
+    printf("O nível ideal de investimento em intervencao militar é: %lf\n", candidatoIdeal -> intervencaoMilitar);
+    printf("O nível ideal de investimento em escola sem partido é: %lf\n", candidatoIdeal -> escolaSemPartido);
     
     printf("\n\nSEGUNDO OS PARAMETROS DO CANDIDATO EVOLUIDO:\n");
     printf(" O nível ideal de autoritarismo de um candidato é: %lf \n",candidatoIdeal -> autoritario);
@@ -316,7 +330,7 @@ double* DireitaSocialIdeal, double* EsquerdaSocialIdeal){
             printf("O candidato tem um viés político e economico de esquerda: %lf\n", candidatoTeste -> esquerda);
     }
     else
-        printf("O candidato tem um viés político e economico de centro: %lf\n" , (1-(candidatoTeste -> direita + candidatoTeste -> esquerda)));
+        printf("O candidato tem um viés político e economico de centro: %lf\n" , ((0.819422 + 0.317659 + 0.137988) - candidatoIdeal-> direita - candidatoIdeal -> esquerda));
 
 
     //---- Carater Social ----
