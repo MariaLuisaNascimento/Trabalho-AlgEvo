@@ -8,8 +8,6 @@ Members:
 Operacional System: Ubuntu 18.04
 
 Compilation and Execution in terminal:
-
-gcc Classes.cpp -o exe
-
-./exe
+gcc Classes.cpp -o exe<br />
+./exe<br />
 
