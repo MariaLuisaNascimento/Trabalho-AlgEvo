@@ -7,7 +7,7 @@ Members:
 
 Operacional System: Ubuntu 18.04
 
-Compilation and Execution in terminal:
+Compilation and Execution in terminal:<br />
 gcc Classes.cpp -o exe<br />
-./exe<br />
+./exe
 
